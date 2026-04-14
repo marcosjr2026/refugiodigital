@@ -1,0 +1,1265 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Refugio Digital — Identidad Visual Provisional</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --azul-profundo: #0B2545;
+    --azul-medio: #13315C;
+    --azul-claro: #8DA9C4;
+    --terracota: #C77D4A;
+    --ambar: #E8A15C;
+    --crema: #F7F3EE;
+    --hueso: #FBF9F6;
+    --carbon: #1A1A1A;
+    --gris-suave: #6B7280;
+    --borde: #E5E0D8;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Manrope', sans-serif;
+    background: var(--hueso);
+    color: var(--carbon);
+    line-height: 1.6;
+    font-size: 16px;
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px;
+  }
+
+  /* HERO */
+  .hero {
+    background: var(--azul-profundo);
+    color: var(--crema);
+    padding: 120px 0 100px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-image: radial-gradient(circle at 20% 30%, rgba(232, 161, 92, 0.08) 0%, transparent 50%),
+                      radial-gradient(circle at 80% 70%, rgba(141, 169, 196, 0.1) 0%, transparent 50%);
+    pointer-events: none;
+  }
+
+  .hero-content { position: relative; }
+
+  .hero-eyebrow {
+    font-family: 'Manrope', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--ambar);
+    margin-bottom: 24px;
+  }
+
+  .hero h1 {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(48px, 6vw, 82px);
+    font-weight: 500;
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    margin-bottom: 24px;
+  }
+
+  .hero h1 em {
+    font-style: italic;
+    color: var(--ambar);
+    font-weight: 400;
+  }
+
+  .hero-subtitle {
+    font-size: 20px;
+    color: var(--azul-claro);
+    max-width: 600px;
+    font-weight: 300;
+  }
+
+  .hero-meta {
+    margin-top: 60px;
+    padding-top: 40px;
+    border-top: 1px solid rgba(141, 169, 196, 0.2);
+    display: flex;
+    gap: 60px;
+    flex-wrap: wrap;
+    font-size: 14px;
+    color: var(--azul-claro);
+  }
+
+  .hero-meta strong {
+    display: block;
+    color: var(--crema);
+    font-weight: 500;
+    margin-bottom: 4px;
+  }
+
+  /* SECTION */
+  section {
+    padding: 100px 0;
+  }
+
+  .section-eyebrow {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: var(--terracota);
+    margin-bottom: 16px;
+  }
+
+  .section-title {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(32px, 4vw, 48px);
+    font-weight: 500;
+    line-height: 1.1;
+    letter-spacing: -0.01em;
+    color: var(--azul-profundo);
+    margin-bottom: 24px;
+    max-width: 700px;
+  }
+
+  .section-intro {
+    font-size: 18px;
+    color: var(--gris-suave);
+    max-width: 680px;
+    margin-bottom: 60px;
+    font-weight: 300;
+  }
+
+  /* CONCEPTO */
+  .concepto-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: start;
+  }
+
+  .concepto-texto p {
+    margin-bottom: 20px;
+    color: var(--carbon);
+  }
+
+  .concepto-texto p:first-of-type::first-letter {
+    font-family: 'Fraunces', serif;
+    font-size: 56px;
+    font-weight: 500;
+    float: left;
+    line-height: 0.85;
+    padding-right: 10px;
+    padding-top: 6px;
+    color: var(--terracota);
+  }
+
+  .simbolismo-lista {
+    list-style: none;
+    margin-top: 32px;
+  }
+
+  .simbolismo-lista li {
+    padding: 16px 0;
+    border-bottom: 1px solid var(--borde);
+    display: flex;
+    gap: 20px;
+    align-items: start;
+  }
+
+  .simbolismo-numero {
+    font-family: 'Fraunces', serif;
+    font-size: 32px;
+    font-weight: 500;
+    color: var(--terracota);
+    line-height: 1;
+    font-style: italic;
+  }
+
+  .simbolismo-contenido strong {
+    display: block;
+    font-size: 15px;
+    color: var(--azul-profundo);
+    margin-bottom: 4px;
+  }
+
+  .simbolismo-contenido span {
+    font-size: 14px;
+    color: var(--gris-suave);
+  }
+
+  /* LOGO SHOWCASE */
+  .logo-principal {
+    background: var(--crema);
+    border: 1px solid var(--borde);
+    padding: 100px 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 500px;
+  }
+
+  .logo-variantes {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+    margin-top: 24px;
+  }
+
+  .logo-caja {
+    aspect-ratio: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+    position: relative;
+    border: 1px solid var(--borde);
+  }
+
+  .logo-caja-label {
+    position: absolute;
+    bottom: 12px;
+    left: 12px;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--gris-suave);
+  }
+
+  .fondo-crema { background: var(--crema); }
+  .fondo-azul { background: var(--azul-profundo); }
+  .fondo-blanco { background: #FFFFFF; }
+  .fondo-terracota { background: var(--terracota); }
+
+  .fondo-azul .logo-caja-label,
+  .fondo-terracota .logo-caja-label {
+    color: rgba(255,255,255,0.6);
+  }
+
+  /* PALETA */
+  .paleta-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+    margin-bottom: 60px;
+  }
+
+  .color-muestra {
+    aspect-ratio: 1;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .color-muestra h4 {
+    font-family: 'Fraunces', serif;
+    font-size: 22px;
+    font-weight: 500;
+    line-height: 1.1;
+  }
+
+  .color-muestra .color-codes {
+    font-size: 11px;
+    font-family: 'Manrope', monospace;
+    letter-spacing: 0.5px;
+    opacity: 0.8;
+  }
+
+  .color-muestra .color-codes div {
+    margin-top: 4px;
+  }
+
+  /* TIPOGRAFIA */
+  .tipografia-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    margin-top: 40px;
+  }
+
+  .tipo-card {
+    padding: 40px;
+    background: var(--crema);
+    border: 1px solid var(--borde);
+  }
+
+  .tipo-nombre {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--terracota);
+    margin-bottom: 12px;
+  }
+
+  .tipo-muestra {
+    font-size: 56px;
+    line-height: 1;
+    margin-bottom: 16px;
+    color: var(--azul-profundo);
+  }
+
+  .tipo-muestra.fraunces {
+    font-family: 'Fraunces', serif;
+    font-weight: 500;
+    font-style: italic;
+  }
+
+  .tipo-muestra.manrope {
+    font-family: 'Manrope', sans-serif;
+    font-weight: 300;
+  }
+
+  .tipo-uso {
+    font-size: 13px;
+    color: var(--gris-suave);
+    line-height: 1.5;
+  }
+
+  .tipo-caracteristicas {
+    font-family: 'Fraunces', serif;
+    font-size: 14px;
+    letter-spacing: 4px;
+    color: var(--gris-suave);
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid var(--borde);
+  }
+
+  /* APLICACIONES */
+  .aplicaciones-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+
+  .app-card {
+    background: var(--crema);
+    border: 1px solid var(--borde);
+    overflow: hidden;
+  }
+
+  .app-card-visual {
+    aspect-ratio: 1.4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+    position: relative;
+  }
+
+  .app-card-caption {
+    padding: 20px 24px;
+    border-top: 1px solid var(--borde);
+    background: #FFFFFF;
+  }
+
+  .app-card-caption h4 {
+    font-family: 'Fraunces', serif;
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--azul-profundo);
+    margin-bottom: 4px;
+  }
+
+  .app-card-caption p {
+    font-size: 13px;
+    color: var(--gris-suave);
+  }
+
+  /* APP: Documento */
+  .mock-documento {
+    background: #FFFFFF;
+    width: 100%;
+    aspect-ratio: 0.77;
+    padding: 28px 24px;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(11, 37, 69, 0.08);
+  }
+
+  .mock-documento .mock-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding-bottom: 16px;
+    border-bottom: 2px solid var(--azul-profundo);
+    margin-bottom: 20px;
+  }
+
+  .mock-documento .mock-titulo {
+    font-family: 'Fraunces', serif;
+    font-size: 11px;
+    font-weight: 500;
+    color: var(--azul-profundo);
+  }
+
+  .mock-documento .mock-texto {
+    height: 6px;
+    background: var(--azul-claro);
+    opacity: 0.3;
+    margin-bottom: 6px;
+    border-radius: 2px;
+  }
+
+  .mock-documento .mock-texto.corto { width: 70%; }
+  .mock-documento .mock-texto.medio { width: 85%; }
+
+  /* APP: Camiseta */
+  .mock-camiseta {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--azul-medio), var(--azul-profundo));
+    position: relative;
+  }
+
+  .camiseta-forma {
+    width: 75%;
+    aspect-ratio: 1;
+    background: var(--crema);
+    clip-path: polygon(25% 8%, 35% 0%, 65% 0%, 75% 8%, 95% 20%, 92% 40%, 82% 38%, 82% 100%, 18% 100%, 18% 38%, 8% 40%, 5% 20%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 20%;
+  }
+
+  /* APP: Avatar redes */
+  .mock-avatar {
+    width: 70%;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background: var(--azul-profundo);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 12px 40px rgba(11, 37, 69, 0.25);
+  }
+
+  /* BRIEF */
+  .brief-section {
+    background: var(--azul-profundo);
+    color: var(--crema);
+    padding: 100px 0;
+  }
+
+  .brief-section .section-title {
+    color: var(--crema);
+  }
+
+  .brief-section .section-intro {
+    color: var(--azul-claro);
+  }
+
+  .brief-section .section-eyebrow {
+    color: var(--ambar);
+  }
+
+  .brief-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    margin-top: 40px;
+  }
+
+  .brief-item {
+    padding: 32px;
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(232, 161, 92, 0.2);
+  }
+
+  .brief-item h4 {
+    font-family: 'Fraunces', serif;
+    font-size: 24px;
+    font-weight: 500;
+    margin-bottom: 16px;
+    color: var(--ambar);
+  }
+
+  .brief-item p, .brief-item li {
+    color: var(--azul-claro);
+    font-size: 14px;
+    line-height: 1.7;
+    margin-bottom: 10px;
+  }
+
+  .brief-item ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .brief-item ul li {
+    padding-left: 20px;
+    position: relative;
+  }
+
+  .brief-item ul li::before {
+    content: '—';
+    position: absolute;
+    left: 0;
+    color: var(--ambar);
+  }
+
+  .brief-item.full {
+    grid-column: 1 / -1;
+  }
+
+  /* FOOTER */
+  footer {
+    background: var(--carbon);
+    color: var(--crema);
+    padding: 60px 0 40px;
+    text-align: center;
+  }
+
+  footer p {
+    font-size: 13px;
+    color: rgba(247, 243, 238, 0.5);
+    margin-bottom: 8px;
+  }
+
+  footer .soli {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: 20px;
+    color: var(--ambar);
+    margin-top: 24px;
+  }
+
+  @media (max-width: 900px) {
+    .concepto-grid, .tipografia-grid, .brief-grid { grid-template-columns: 1fr; gap: 40px; }
+    .paleta-grid { grid-template-columns: repeat(2, 1fr); }
+    .aplicaciones-grid { grid-template-columns: 1fr; }
+    .logo-variantes { grid-template-columns: 1fr; }
+    .container { padding: 0 24px; }
+    section { padding: 60px 0; }
+    .hero { padding: 80px 0 60px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ HERO ============ -->
+<header class="hero">
+  <div class="container hero-content">
+    <div class="hero-eyebrow">Identidad visual provisional · Abril 2026</div>
+    <h1>Refugio<br><em>Digital</em></h1>
+    <p class="hero-subtitle">Semilla que crece con raíces de circuito. Una identidad visual que integra vida orgánica con futuro digital, formación cristiana con habilidades del siglo XXI.</p>
+    <div class="hero-meta">
+      <div>
+        <strong>Concepto</strong>
+        Semilla / brote con raíces de circuito
+      </div>
+      <div>
+        <strong>Tono</strong>
+        Neutral profesional, identidad cristiana sutil
+      </div>
+      <div>
+        <strong>Paleta</strong>
+        Azul profundo + terracota / ámbar
+      </div>
+      <div>
+        <strong>Estado</strong>
+        Provisional para fase fundacional
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ============ CONCEPTO ============ -->
+<section>
+  <div class="container">
+    <div class="concepto-grid">
+      <div>
+        <div class="section-eyebrow">01 — El concepto</div>
+        <h2 class="section-title">Una semilla que crece hacia el futuro digital</h2>
+        <div class="concepto-texto">
+          <p>El logo de Refugio Digital nace de una tensión creativa deliberada. Por un lado, el trabajo es profundamente humano, pastoral, orgánico, lento como el crecimiento de un niño. Por otro, el contenido es radicalmente digital, tecnológico, del futuro. Un logo honesto debe honrar ambas dimensiones sin reducir ninguna.</p>
+
+          <p>La solución es una semilla o brote cuyas raíces, en lugar de ser orgánicas, forman un patrón de circuito electrónico. Arriba emerge la vida nueva; abajo, las raíces alimentan esa vida desde el mundo digital que es el medio por el cual la obra se hace posible. La metáfora es directa: los estudiantes son las semillas; la fe y la tecnología son las raíces que los nutren; el fruto es su vida transformada.</p>
+
+          <p>Este símbolo funciona en múltiples niveles al mismo tiempo. Como imagen pastoral, evoca las parábolas de Jesús sobre la siembra, el sembrador, y la semilla de mostaza que crece hasta volverse árbol. Como imagen tecnológica, conecta claramente con el mundo digital sin ser frío ni genérico. Como imagen misional, comunica crecimiento, paciencia, esperanza, y transformación sostenida a lo largo del tiempo.</p>
+        </div>
+
+        <ul class="simbolismo-lista">
+          <li>
+            <span class="simbolismo-numero">i</span>
+            <div class="simbolismo-contenido">
+              <strong>El brote superior</strong>
+              <span>Tres hojas que emergen, representando los tres niveles del programa: Verde, Ámbar, Oro</span>
+            </div>
+          </li>
+          <li>
+            <span class="simbolismo-numero">ii</span>
+            <div class="simbolismo-contenido">
+              <strong>El tallo central</strong>
+              <span>Línea limpia y vertical que comunica crecimiento sostenido desde la niñez hasta la juventud adulta</span>
+            </div>
+          </li>
+          <li>
+            <span class="simbolismo-numero">iii</span>
+            <div class="simbolismo-contenido">
+              <strong>Las raíces de circuito</strong>
+              <span>Patrón geométrico digital que alimenta desde abajo, con nodos que parecen semillas o puntos de conexión</span>
+            </div>
+          </li>
+          <li>
+            <span class="simbolismo-numero">iv</span>
+            <div class="simbolismo-contenido">
+              <strong>El punto central luminoso</strong>
+              <span>Donde el brote se encuentra con las raíces, un acento cálido que sugiere corazón, alma, presencia divina</span>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <!-- LOGO PRINCIPAL -->
+      <div class="logo-principal">
+        <svg viewBox="0 0 280 340" width="100%" style="max-width: 360px;">
+          <!-- RAICES DE CIRCUITO -->
+          <g stroke="#0B2545" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <!-- Raíz central principal -->
+            <path d="M 140 180 L 140 240"/>
+
+            <!-- Raíz izquierda diagonal -->
+            <path d="M 140 200 L 105 215 L 105 245 L 75 260"/>
+            <path d="M 105 245 L 130 265"/>
+
+            <!-- Raíz derecha diagonal -->
+            <path d="M 140 200 L 175 215 L 175 245 L 205 260"/>
+            <path d="M 175 245 L 150 265"/>
+
+            <!-- Raíz central inferior ramificada -->
+            <path d="M 140 240 L 115 270"/>
+            <path d="M 140 240 L 165 270"/>
+            <path d="M 140 240 L 140 290"/>
+
+            <!-- Raíces externas largas -->
+            <path d="M 75 260 L 60 290"/>
+            <path d="M 205 260 L 220 290"/>
+            <path d="M 115 270 L 95 295"/>
+            <path d="M 165 270 L 185 295"/>
+          </g>
+
+          <!-- NODOS DE CIRCUITO (semillas en las raíces) -->
+          <g fill="#0B2545">
+            <circle cx="140" cy="200" r="4"/>
+            <circle cx="105" cy="215" r="3.5"/>
+            <circle cx="175" cy="215" r="3.5"/>
+            <circle cx="105" cy="245" r="3"/>
+            <circle cx="175" cy="245" r="3"/>
+            <circle cx="140" cy="240" r="4"/>
+          </g>
+
+          <!-- Nodos externos con acento cálido -->
+          <g fill="#C77D4A">
+            <circle cx="60" cy="290" r="4.5"/>
+            <circle cx="220" cy="290" r="4.5"/>
+            <circle cx="95" cy="295" r="4"/>
+            <circle cx="185" cy="295" r="4"/>
+            <circle cx="140" cy="290" r="4"/>
+            <circle cx="75" cy="260" r="3"/>
+            <circle cx="205" cy="260" r="3"/>
+            <circle cx="130" cy="265" r="3"/>
+            <circle cx="150" cy="265" r="3"/>
+            <circle cx="115" cy="270" r="3"/>
+            <circle cx="165" cy="270" r="3"/>
+          </g>
+
+          <!-- TALLO PRINCIPAL -->
+          <path d="M 140 180 L 140 100" stroke="#0B2545" stroke-width="4" stroke-linecap="round" fill="none"/>
+
+          <!-- HOJA IZQUIERDA (Nivel Verde) -->
+          <path d="M 140 150
+                   C 115 145, 90 130, 85 110
+                   C 100 112, 125 125, 140 145
+                   Z"
+                fill="#13315C"/>
+
+          <!-- HOJA DERECHA (Nivel Ámbar) -->
+          <path d="M 140 130
+                   C 165 125, 190 110, 195 90
+                   C 180 92, 155 105, 140 125
+                   Z"
+                fill="#0B2545"/>
+
+          <!-- HOJA SUPERIOR (Nivel Oro) -->
+          <path d="M 140 100
+                   C 130 75, 135 50, 155 35
+                   C 155 60, 150 85, 140 100
+                   Z"
+                fill="#C77D4A"/>
+
+          <!-- PUNTO LUMINOSO CENTRAL (donde raíces y brote se encuentran) -->
+          <circle cx="140" cy="180" r="7" fill="#E8A15C"/>
+          <circle cx="140" cy="180" r="3.5" fill="#FBF9F6"/>
+
+          <!-- WORDMARK -->
+          <text x="140" y="325" text-anchor="middle" font-family="Fraunces, serif" font-size="22" font-weight="500" fill="#0B2545" letter-spacing="1">
+            REFUGIO
+          </text>
+          <text x="140" y="345" text-anchor="middle" font-family="Fraunces, serif" font-size="14" font-style="italic" font-weight="400" fill="#C77D4A" letter-spacing="3">
+            digital
+          </text>
+        </svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ LOGO EN CONTEXTOS ============ -->
+<section style="background: var(--crema);">
+  <div class="container">
+    <div class="section-eyebrow">02 — El logo en contextos</div>
+    <h2 class="section-title">Funciona sobre cualquier fondo</h2>
+    <p class="section-intro">Un logo profesional debe mantener su legibilidad e identidad sobre diferentes fondos y en diferentes tratamientos. Aquí están las cuatro variantes principales que cubren la mayoría de los casos de uso reales.</p>
+
+    <div class="logo-variantes">
+      <!-- VARIANTE 1: Fondo crema (primario) -->
+      <div class="logo-caja fondo-crema">
+        <svg viewBox="0 0 200 240" width="180">
+          <g stroke="#0B2545" stroke-width="2" fill="none" stroke-linecap="round">
+            <path d="M 100 130 L 100 170"/>
+            <path d="M 100 145 L 75 155 L 75 175 L 55 185"/>
+            <path d="M 100 145 L 125 155 L 125 175 L 145 185"/>
+            <path d="M 100 170 L 82 195"/>
+            <path d="M 100 170 L 118 195"/>
+            <path d="M 100 170 L 100 205"/>
+          </g>
+          <g fill="#0B2545">
+            <circle cx="100" cy="145" r="3"/>
+            <circle cx="75" cy="155" r="2.5"/>
+            <circle cx="125" cy="155" r="2.5"/>
+            <circle cx="100" cy="170" r="3"/>
+          </g>
+          <g fill="#C77D4A">
+            <circle cx="55" cy="185" r="3"/>
+            <circle cx="145" cy="185" r="3"/>
+            <circle cx="82" cy="195" r="2.5"/>
+            <circle cx="118" cy="195" r="2.5"/>
+            <circle cx="100" cy="205" r="3"/>
+          </g>
+          <path d="M 100 130 L 100 75" stroke="#0B2545" stroke-width="3" stroke-linecap="round" fill="none"/>
+          <path d="M 100 110 C 82 107, 65 95, 62 80 C 74 82, 92 92, 100 106 Z" fill="#13315C"/>
+          <path d="M 100 95 C 118 92, 135 80, 138 65 C 126 67, 108 77, 100 91 Z" fill="#0B2545"/>
+          <path d="M 100 75 C 93 58, 96 40, 110 28 C 110 48, 106 65, 100 75 Z" fill="#C77D4A"/>
+          <circle cx="100" cy="130" r="5" fill="#E8A15C"/>
+          <circle cx="100" cy="130" r="2.5" fill="#FBF9F6"/>
+          <text x="100" y="225" text-anchor="middle" font-family="Fraunces, serif" font-size="15" font-weight="500" fill="#0B2545" letter-spacing="0.8">REFUGIO</text>
+          <text x="100" y="238" text-anchor="middle" font-family="Fraunces, serif" font-size="10" font-style="italic" fill="#C77D4A" letter-spacing="2">digital</text>
+        </svg>
+        <div class="logo-caja-label">Primario · Fondo crema</div>
+      </div>
+
+      <!-- VARIANTE 2: Fondo azul profundo -->
+      <div class="logo-caja fondo-azul">
+        <svg viewBox="0 0 200 240" width="180">
+          <g stroke="#F7F3EE" stroke-width="2" fill="none" stroke-linecap="round">
+            <path d="M 100 130 L 100 170"/>
+            <path d="M 100 145 L 75 155 L 75 175 L 55 185"/>
+            <path d="M 100 145 L 125 155 L 125 175 L 145 185"/>
+            <path d="M 100 170 L 82 195"/>
+            <path d="M 100 170 L 118 195"/>
+            <path d="M 100 170 L 100 205"/>
+          </g>
+          <g fill="#F7F3EE">
+            <circle cx="100" cy="145" r="3"/>
+            <circle cx="75" cy="155" r="2.5"/>
+            <circle cx="125" cy="155" r="2.5"/>
+            <circle cx="100" cy="170" r="3"/>
+          </g>
+          <g fill="#E8A15C">
+            <circle cx="55" cy="185" r="3"/>
+            <circle cx="145" cy="185" r="3"/>
+            <circle cx="82" cy="195" r="2.5"/>
+            <circle cx="118" cy="195" r="2.5"/>
+            <circle cx="100" cy="205" r="3"/>
+          </g>
+          <path d="M 100 130 L 100 75" stroke="#F7F3EE" stroke-width="3" stroke-linecap="round" fill="none"/>
+          <path d="M 100 110 C 82 107, 65 95, 62 80 C 74 82, 92 92, 100 106 Z" fill="#8DA9C4"/>
+          <path d="M 100 95 C 118 92, 135 80, 138 65 C 126 67, 108 77, 100 91 Z" fill="#F7F3EE"/>
+          <path d="M 100 75 C 93 58, 96 40, 110 28 C 110 48, 106 65, 100 75 Z" fill="#E8A15C"/>
+          <circle cx="100" cy="130" r="5" fill="#E8A15C"/>
+          <circle cx="100" cy="130" r="2.5" fill="#FBF9F6"/>
+          <text x="100" y="225" text-anchor="middle" font-family="Fraunces, serif" font-size="15" font-weight="500" fill="#F7F3EE" letter-spacing="0.8">REFUGIO</text>
+          <text x="100" y="238" text-anchor="middle" font-family="Fraunces, serif" font-size="10" font-style="italic" fill="#E8A15C" letter-spacing="2">digital</text>
+        </svg>
+        <div class="logo-caja-label">Inverso · Fondo oscuro</div>
+      </div>
+
+      <!-- VARIANTE 3: Solo icono -->
+      <div class="logo-caja fondo-blanco">
+        <svg viewBox="0 0 200 200" width="160">
+          <g stroke="#0B2545" stroke-width="2.5" fill="none" stroke-linecap="round">
+            <path d="M 100 110 L 100 155"/>
+            <path d="M 100 125 L 72 137 L 72 160 L 48 172"/>
+            <path d="M 100 125 L 128 137 L 128 160 L 152 172"/>
+            <path d="M 100 155 L 78 182"/>
+            <path d="M 100 155 L 122 182"/>
+            <path d="M 100 155 L 100 192"/>
+          </g>
+          <g fill="#0B2545">
+            <circle cx="100" cy="125" r="3.5"/>
+            <circle cx="72" cy="137" r="3"/>
+            <circle cx="128" cy="137" r="3"/>
+            <circle cx="100" cy="155" r="3.5"/>
+          </g>
+          <g fill="#C77D4A">
+            <circle cx="48" cy="172" r="3.5"/>
+            <circle cx="152" cy="172" r="3.5"/>
+            <circle cx="78" cy="182" r="3"/>
+            <circle cx="122" cy="182" r="3"/>
+            <circle cx="100" cy="192" r="3.5"/>
+          </g>
+          <path d="M 100 110 L 100 45" stroke="#0B2545" stroke-width="3.5" stroke-linecap="round" fill="none"/>
+          <path d="M 100 85 C 78 82, 58 68, 55 50 C 70 52, 90 64, 100 81 Z" fill="#13315C"/>
+          <path d="M 100 68 C 122 64, 142 52, 145 34 C 131 36, 110 46, 100 64 Z" fill="#0B2545"/>
+          <path d="M 100 45 C 92 25, 96 5, 112 -8 C 112 14, 108 34, 100 45 Z" fill="#C77D4A"/>
+          <circle cx="100" cy="110" r="6" fill="#E8A15C"/>
+          <circle cx="100" cy="110" r="3" fill="#FBF9F6"/>
+        </svg>
+        <div class="logo-caja-label">Icono · Solo símbolo</div>
+      </div>
+
+      <!-- VARIANTE 4: Monocromo terracota -->
+      <div class="logo-caja fondo-terracota">
+        <svg viewBox="0 0 200 240" width="180">
+          <g stroke="#F7F3EE" stroke-width="2" fill="none" stroke-linecap="round">
+            <path d="M 100 130 L 100 170"/>
+            <path d="M 100 145 L 75 155 L 75 175 L 55 185"/>
+            <path d="M 100 145 L 125 155 L 125 175 L 145 185"/>
+            <path d="M 100 170 L 82 195"/>
+            <path d="M 100 170 L 118 195"/>
+            <path d="M 100 170 L 100 205"/>
+          </g>
+          <g fill="#F7F3EE">
+            <circle cx="100" cy="145" r="3"/>
+            <circle cx="75" cy="155" r="2.5"/>
+            <circle cx="125" cy="155" r="2.5"/>
+            <circle cx="100" cy="170" r="3"/>
+            <circle cx="55" cy="185" r="3"/>
+            <circle cx="145" cy="185" r="3"/>
+            <circle cx="82" cy="195" r="2.5"/>
+            <circle cx="118" cy="195" r="2.5"/>
+            <circle cx="100" cy="205" r="3"/>
+          </g>
+          <path d="M 100 130 L 100 75" stroke="#F7F3EE" stroke-width="3" stroke-linecap="round" fill="none"/>
+          <path d="M 100 110 C 82 107, 65 95, 62 80 C 74 82, 92 92, 100 106 Z" fill="#F7F3EE"/>
+          <path d="M 100 95 C 118 92, 135 80, 138 65 C 126 67, 108 77, 100 91 Z" fill="#F7F3EE" opacity="0.85"/>
+          <path d="M 100 75 C 93 58, 96 40, 110 28 C 110 48, 106 65, 100 75 Z" fill="#F7F3EE" opacity="0.7"/>
+          <circle cx="100" cy="130" r="5" fill="#F7F3EE"/>
+          <text x="100" y="225" text-anchor="middle" font-family="Fraunces, serif" font-size="15" font-weight="500" fill="#F7F3EE" letter-spacing="0.8">REFUGIO</text>
+          <text x="100" y="238" text-anchor="middle" font-family="Fraunces, serif" font-size="10" font-style="italic" fill="#F7F3EE" letter-spacing="2" opacity="0.85">digital</text>
+        </svg>
+        <div class="logo-caja-label">Monocromo · Acento</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PALETA ============ -->
+<section>
+  <div class="container">
+    <div class="section-eyebrow">03 — Paleta cromática</div>
+    <h2 class="section-title">Azul profundo con corazón cálido</h2>
+    <p class="section-intro">La paleta combina la seriedad profesional del azul profundo con la calidez humana del terracota y el ámbar. Esta tensión entre lo frío corporativo y lo cálido pastoral refleja exactamente el balance que el proyecto busca: profesionalismo del siglo XXI con corazón humano y misional.</p>
+
+    <div class="paleta-grid">
+      <div class="color-muestra" style="background: #0B2545; color: #F7F3EE;">
+        <div>
+          <div style="font-size: 12px; letter-spacing: 1.5px; opacity: 0.7; margin-bottom: 8px;">PRIMARIO</div>
+          <h4>Azul<br>Profundo</h4>
+        </div>
+        <div class="color-codes">
+          <div>HEX &nbsp; #0B2545</div>
+          <div>RGB &nbsp; 11, 37, 69</div>
+          <div>USO &nbsp; Principal / fondos</div>
+        </div>
+      </div>
+
+      <div class="color-muestra" style="background: #13315C; color: #F7F3EE;">
+        <div>
+          <div style="font-size: 12px; letter-spacing: 1.5px; opacity: 0.7; margin-bottom: 8px;">SECUNDARIO</div>
+          <h4>Azul<br>Medio</h4>
+        </div>
+        <div class="color-codes">
+          <div>HEX &nbsp; #13315C</div>
+          <div>RGB &nbsp; 19, 49, 92</div>
+          <div>USO &nbsp; Gradientes / apoyo</div>
+        </div>
+      </div>
+
+      <div class="color-muestra" style="background: #C77D4A; color: #FBF9F6;">
+        <div>
+          <div style="font-size: 12px; letter-spacing: 1.5px; opacity: 0.8; margin-bottom: 8px;">ACENTO</div>
+          <h4>Terracota<br>Tierra</h4>
+        </div>
+        <div class="color-codes">
+          <div>HEX &nbsp; #C77D4A</div>
+          <div>RGB &nbsp; 199, 125, 74</div>
+          <div>USO &nbsp; Calidez / humanidad</div>
+        </div>
+      </div>
+
+      <div class="color-muestra" style="background: #E8A15C; color: #1A1A1A;">
+        <div>
+          <div style="font-size: 12px; letter-spacing: 1.5px; opacity: 0.7; margin-bottom: 8px;">ACENTO LUZ</div>
+          <h4>Ámbar<br>Luminoso</h4>
+        </div>
+        <div class="color-codes">
+          <div>HEX &nbsp; #E8A15C</div>
+          <div>RGB &nbsp; 232, 161, 92</div>
+          <div>USO &nbsp; Destellos / vida</div>
+        </div>
+      </div>
+
+      <div class="color-muestra" style="background: #8DA9C4; color: #0B2545;">
+        <div>
+          <div style="font-size: 12px; letter-spacing: 1.5px; opacity: 0.7; margin-bottom: 8px;">APOYO FRÍO</div>
+          <h4>Azul<br>Claro</h4>
+        </div>
+        <div class="color-codes">
+          <div>HEX &nbsp; #8DA9C4</div>
+          <div>RGB &nbsp; 141, 169, 196</div>
+          <div>USO &nbsp; Secundarios / texto</div>
+        </div>
+      </div>
+
+      <div class="color-muestra" style="background: #F7F3EE; color: #0B2545; border: 1px solid #E5E0D8;">
+        <div>
+          <div style="font-size: 12px; letter-spacing: 1.5px; opacity: 0.6; margin-bottom: 8px;">NEUTRO CÁLIDO</div>
+          <h4>Crema<br>Pergamino</h4>
+        </div>
+        <div class="color-codes">
+          <div>HEX &nbsp; #F7F3EE</div>
+          <div>RGB &nbsp; 247, 243, 238</div>
+          <div>USO &nbsp; Fondos principales</div>
+        </div>
+      </div>
+
+      <div class="color-muestra" style="background: #FBF9F6; color: #0B2545; border: 1px solid #E5E0D8;">
+        <div>
+          <div style="font-size: 12px; letter-spacing: 1.5px; opacity: 0.6; margin-bottom: 8px;">NEUTRO LUZ</div>
+          <h4>Hueso<br>Claro</h4>
+        </div>
+        <div class="color-codes">
+          <div>HEX &nbsp; #FBF9F6</div>
+          <div>RGB &nbsp; 251, 249, 246</div>
+          <div>USO &nbsp; Blanco alternativo</div>
+        </div>
+      </div>
+
+      <div class="color-muestra" style="background: #1A1A1A; color: #F7F3EE;">
+        <div>
+          <div style="font-size: 12px; letter-spacing: 1.5px; opacity: 0.7; margin-bottom: 8px;">TEXTO</div>
+          <h4>Carbón<br>Texto</h4>
+        </div>
+        <div class="color-codes">
+          <div>HEX &nbsp; #1A1A1A</div>
+          <div>RGB &nbsp; 26, 26, 26</div>
+          <div>USO &nbsp; Texto cuerpo</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TIPOGRAFIA ============ -->
+<section style="background: var(--crema);">
+  <div class="container">
+    <div class="section-eyebrow">04 — Sistema tipográfico</div>
+    <h2 class="section-title">Fraunces serif con Manrope sans</h2>
+    <p class="section-intro">Dos tipografías que dialogan bien: una serif distintiva y cálida para los encabezados y momentos importantes, y una sans clara y profesional para el cuerpo. Ambas son open source y están disponibles gratuitamente en Google Fonts, lo cual facilita que cualquier sitio de la red global pueda usarlas sin costo.</p>
+
+    <div class="tipografia-grid">
+      <div class="tipo-card">
+        <div class="tipo-nombre">TIPOGRAFÍA DISPLAY</div>
+        <div class="tipo-muestra fraunces">Refugio Digital</div>
+        <div class="tipo-uso">
+          <strong style="color: var(--azul-profundo); font-family: 'Manrope';">Fraunces</strong><br>
+          Serif contemporánea con carácter cálido y distintivo. Úsala para títulos, nombres del proyecto, momentos importantes en documentos. Su versión itálica es especialmente elegante para acentos.
+        </div>
+        <div class="tipo-caracteristicas">A B C D E F · 0 1 2 3 4</div>
+      </div>
+
+      <div class="tipo-card">
+        <div class="tipo-nombre">TIPOGRAFÍA CUERPO</div>
+        <div class="tipo-muestra manrope">Refugio Digital</div>
+        <div class="tipo-uso">
+          <strong style="color: var(--azul-profundo); font-family: 'Manrope';">Manrope</strong><br>
+          Sans-serif geométrica moderna con excelente legibilidad en pantalla e impresión. Úsala para todo el texto de cuerpo, navegación, etiquetas, y elementos funcionales de la interfaz.
+        </div>
+        <div class="tipo-caracteristicas">A B C D E F · 0 1 2 3 4</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ APLICACIONES ============ -->
+<section>
+  <div class="container">
+    <div class="section-eyebrow">05 — Aplicaciones</div>
+    <h2 class="section-title">El logo en contextos reales</h2>
+    <p class="section-intro">Tres ejemplos de cómo el logo se manifiesta en contextos reales del proyecto: documentos formales para socios estratégicos, materiales del sitio físico como camisetas del equipo, y presencia digital en redes sociales.</p>
+
+    <div class="aplicaciones-grid">
+      <!-- APP 1: DOCUMENTO -->
+      <div class="app-card">
+        <div class="app-card-visual" style="background: linear-gradient(135deg, #E8A15C 0%, #C77D4A 100%);">
+          <div class="mock-documento">
+            <div class="mock-header">
+              <svg viewBox="0 0 40 52" width="26">
+                <g stroke="#0B2545" stroke-width="1.5" fill="none" stroke-linecap="round">
+                  <path d="M 20 28 L 20 38"/>
+                  <path d="M 20 32 L 13 35 L 13 41 L 8 44"/>
+                  <path d="M 20 32 L 27 35 L 27 41 L 32 44"/>
+                  <path d="M 20 38 L 14 46"/>
+                  <path d="M 20 38 L 26 46"/>
+                </g>
+                <g fill="#0B2545">
+                  <circle cx="20" cy="32" r="1.2"/>
+                  <circle cx="13" cy="35" r="1"/>
+                  <circle cx="27" cy="35" r="1"/>
+                  <circle cx="20" cy="38" r="1.2"/>
+                </g>
+                <g fill="#C77D4A">
+                  <circle cx="8" cy="44" r="1.2"/>
+                  <circle cx="32" cy="44" r="1.2"/>
+                  <circle cx="14" cy="46" r="1"/>
+                  <circle cx="26" cy="46" r="1"/>
+                </g>
+                <path d="M 20 28 L 20 14" stroke="#0B2545" stroke-width="1.8" stroke-linecap="round" fill="none"/>
+                <path d="M 20 22 C 15 20, 11 16, 10 12 C 13 12, 18 16, 20 21 Z" fill="#13315C"/>
+                <path d="M 20 19 C 24 17, 28 13, 29 9 C 26 9, 22 13, 20 18 Z" fill="#0B2545"/>
+                <path d="M 20 14 C 18 8, 19 3, 22 0 C 22 4, 22 10, 20 14 Z" fill="#C77D4A"/>
+                <circle cx="20" cy="28" r="1.8" fill="#E8A15C"/>
+              </svg>
+              <div class="mock-titulo">REFUGIO DIGITAL<br><span style="font-size: 8px; opacity: 0.6;">Propuesta de alianza</span></div>
+            </div>
+            <div class="mock-texto"></div>
+            <div class="mock-texto"></div>
+            <div class="mock-texto medio"></div>
+            <div class="mock-texto"></div>
+            <div class="mock-texto corto"></div>
+            <div style="height: 10px;"></div>
+            <div class="mock-texto"></div>
+            <div class="mock-texto medio"></div>
+            <div class="mock-texto"></div>
+            <div class="mock-texto corto"></div>
+          </div>
+        </div>
+        <div class="app-card-caption">
+          <h4>Documentos formales</h4>
+          <p>Cabeceras de propuestas, reportes, acuerdos con socios estratégicos</p>
+        </div>
+      </div>
+
+      <!-- APP 2: CAMISETA -->
+      <div class="app-card">
+        <div class="app-card-visual" style="background: linear-gradient(160deg, #8DA9C4 0%, #13315C 100%);">
+          <svg viewBox="0 0 200 200" width="75%">
+            <!-- Silueta camiseta -->
+            <path d="M 50 40 L 65 30 L 80 25 L 120 25 L 135 30 L 150 40 L 175 55 L 170 80 L 145 80 L 145 180 L 55 180 L 55 80 L 30 80 L 25 55 Z"
+                  fill="#F7F3EE" stroke="#0B2545" stroke-width="1.5"/>
+            <!-- Logo en el centro de la camiseta -->
+            <g transform="translate(100, 100)">
+              <g stroke="#0B2545" stroke-width="1.2" fill="none" stroke-linecap="round">
+                <path d="M 0 20 L 0 35"/>
+                <path d="M 0 25 L -12 30 L -12 38 L -20 43"/>
+                <path d="M 0 25 L 12 30 L 12 38 L 20 43"/>
+                <path d="M 0 35 L -8 48"/>
+                <path d="M 0 35 L 8 48"/>
+                <path d="M 0 35 L 0 55"/>
+              </g>
+              <g fill="#0B2545">
+                <circle cx="0" cy="25" r="1.5"/>
+                <circle cx="-12" cy="30" r="1.2"/>
+                <circle cx="12" cy="30" r="1.2"/>
+                <circle cx="0" cy="35" r="1.5"/>
+              </g>
+              <g fill="#C77D4A">
+                <circle cx="-20" cy="43" r="1.5"/>
+                <circle cx="20" cy="43" r="1.5"/>
+                <circle cx="-8" cy="48" r="1.2"/>
+                <circle cx="8" cy="48" r="1.2"/>
+                <circle cx="0" cy="55" r="1.5"/>
+              </g>
+              <path d="M 0 20 L 0 -10" stroke="#0B2545" stroke-width="1.8" stroke-linecap="round" fill="none"/>
+              <path d="M 0 5 C -10 3, -18 -5, -20 -15 C -12 -13, -4 -7, 0 2 Z" fill="#13315C"/>
+              <path d="M 0 -5 C 10 -7, 18 -14, 20 -24 C 12 -22, 4 -17, 0 -7 Z" fill="#0B2545"/>
+              <path d="M 0 -10 C -4 -20, -2 -30, 5 -37 C 5 -27, 3 -17, 0 -10 Z" fill="#C77D4A"/>
+              <circle cx="0" cy="20" r="2.5" fill="#E8A15C"/>
+            </g>
+          </svg>
+        </div>
+        <div class="app-card-caption">
+          <h4>Camiseta del equipo</h4>
+          <p>Materiales del sitio físico, uniformes del coordinador y facilitadores</p>
+        </div>
+      </div>
+
+      <!-- APP 3: AVATAR REDES -->
+      <div class="app-card">
+        <div class="app-card-visual" style="background: linear-gradient(135deg, #F7F3EE 0%, #E5E0D8 100%);">
+          <div class="mock-avatar">
+            <svg viewBox="0 0 200 200" width="70%">
+              <g stroke="#F7F3EE" stroke-width="2.5" fill="none" stroke-linecap="round">
+                <path d="M 100 105 L 100 145"/>
+                <path d="M 100 120 L 75 130 L 75 150 L 55 160"/>
+                <path d="M 100 120 L 125 130 L 125 150 L 145 160"/>
+                <path d="M 100 145 L 82 168"/>
+                <path d="M 100 145 L 118 168"/>
+                <path d="M 100 145 L 100 180"/>
+              </g>
+              <g fill="#F7F3EE">
+                <circle cx="100" cy="120" r="3.5"/>
+                <circle cx="75" cy="130" r="3"/>
+                <circle cx="125" cy="130" r="3"/>
+                <circle cx="100" cy="145" r="3.5"/>
+              </g>
+              <g fill="#E8A15C">
+                <circle cx="55" cy="160" r="4"/>
+                <circle cx="145" cy="160" r="4"/>
+                <circle cx="82" cy="168" r="3.5"/>
+                <circle cx="118" cy="168" r="3.5"/>
+                <circle cx="100" cy="180" r="4"/>
+              </g>
+              <path d="M 100 105 L 100 45" stroke="#F7F3EE" stroke-width="3.5" stroke-linecap="round" fill="none"/>
+              <path d="M 100 82 C 78 80, 58 65, 55 48 C 70 50, 90 62, 100 80 Z" fill="#8DA9C4"/>
+              <path d="M 100 68 C 122 65, 142 52, 145 34 C 131 36, 110 48, 100 64 Z" fill="#F7F3EE"/>
+              <path d="M 100 45 C 92 26, 96 8, 112 -5 C 112 18, 108 35, 100 45 Z" fill="#E8A15C"/>
+              <circle cx="100" cy="105" r="6" fill="#E8A15C"/>
+              <circle cx="100" cy="105" r="3" fill="#FBF9F6"/>
+            </svg>
+          </div>
+        </div>
+        <div class="app-card-caption">
+          <h4>Avatar redes sociales</h4>
+          <p>Perfil circular para Instagram, X, LinkedIn, y otras plataformas</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ BRIEF ============ -->
+<section class="brief-section">
+  <div class="container">
+    <div class="section-eyebrow">06 — Brief para diseñador profesional</div>
+    <h2 class="section-title">Para cuando contrates diseño profesional</h2>
+    <p class="section-intro">Este brief captura todas las decisiones tomadas y puede ser entregado directamente a un diseñador gráfico profesional cuando estés listo para invertir en la versión final del logo. Ahorrará semanas de iteración y mejorará dramáticamente la calidad del resultado final.</p>
+
+    <div class="brief-grid">
+      <div class="brief-item">
+        <h4>01 · Proyecto</h4>
+        <p><strong style="color: #FBF9F6;">Refugio Digital Foundation</strong> — organización sin fines de lucro que opera un modelo integral de educación cristiana en inteligencia artificial para niños y jóvenes de 10 a 22 años en comunidades pobres, con primer sitio operacional en Haití y modelo replicable globalmente.</p>
+      </div>
+
+      <div class="brief-item">
+        <h4>02 · Objetivo del logo</h4>
+        <p>Crear una identidad visual distintiva que funcione en todos los contextos del proyecto durante al menos los próximos 10 años: documentos formales, sitios físicos en comunidades pobres, materiales para socios internacionales, y presencia digital. Debe comunicar profesionalismo sin sacrificar calidez pastoral.</p>
+      </div>
+
+      <div class="brief-item">
+        <h4>03 · Concepto central</h4>
+        <p>Una semilla o brote en crecimiento cuyas raíces, en lugar de ser orgánicas, forman un patrón de circuito digital. Arriba emerge la vida nueva (hojas); abajo, las raíces alimentan desde el mundo digital. La metáfora integra lo orgánico (formación humana, crecimiento espiritual) con lo tecnológico (AI, futuro digital).</p>
+      </div>
+
+      <div class="brief-item">
+        <h4>04 · Tono deseado</h4>
+        <ul>
+          <li>Profesional y serio, no infantil</li>
+          <li>Cálido y humano, no frío corporativo</li>
+          <li>Contemporáneo, no retro ni genérico</li>
+          <li>Neutral profesional en identidad cristiana</li>
+          <li>Distintivo, no cliché de nonprofit</li>
+        </ul>
+      </div>
+
+      <div class="brief-item">
+        <h4>05 · Paleta cromática</h4>
+        <ul>
+          <li>Primario: Azul Profundo #0B2545</li>
+          <li>Secundario: Azul Medio #13315C</li>
+          <li>Acento cálido: Terracota #C77D4A</li>
+          <li>Destello: Ámbar Luminoso #E8A15C</li>
+          <li>Neutro cálido: Crema Pergamino #F7F3EE</li>
+          <li>Apoyo frío: Azul Claro #8DA9C4</li>
+        </ul>
+      </div>
+
+      <div class="brief-item">
+        <h4>06 · Tipografía recomendada</h4>
+        <p><strong style="color: #FBF9F6;">Fraunces</strong> (serif) para titulares y nombre del proyecto. <strong style="color: #FBF9F6;">Manrope</strong> (sans-serif) para cuerpo y texto funcional. Ambas open source en Google Fonts. El diseñador puede proponer alternativas si tiene razones sólidas.</p>
+      </div>
+
+      <div class="brief-item">
+        <h4>07 · Elementos a incluir</h4>
+        <ul>
+          <li>Símbolo icónico (brote + raíces de circuito)</li>
+          <li>Wordmark "Refugio Digital"</li>
+          <li>Tres hojas = tres niveles del programa</li>
+          <li>Punto luminoso central</li>
+          <li>Identidad cristiana sutil, no explícita</li>
+        </ul>
+      </div>
+
+      <div class="brief-item">
+        <h4>08 · Elementos a evitar</h4>
+        <ul>
+          <li>Cruces explícitas o símbolos cristianos obvios</li>
+          <li>Paloma del Espíritu Santo (demasiado cliché)</li>
+          <li>Manos entrelazadas o símbolos de "ayuda"</li>
+          <li>Imaginería de niños específicos</li>
+          <li>Gradientes morados (estética AI genérica)</li>
+          <li>Tipografías como Inter, Roboto, Arial</li>
+        </ul>
+      </div>
+
+      <div class="brief-item full">
+        <h4>09 · Entregables esperados del diseñador profesional</h4>
+        <p>Un paquete completo de identidad visual que incluya: versión horizontal, versión vertical, versión solo ícono, versión monocromática, versión inversa sobre fondo oscuro, favicon, avatar circular para redes sociales, y plantillas de aplicación para documentos, presentaciones, y materiales físicos. Los archivos deben entregarse en formatos vectoriales editables (SVG, AI, EPS) además de los formatos finales (PNG transparente en varias resoluciones, JPG). Adicionalmente, un manual breve de uso de marca (2-5 páginas) que documente espaciado mínimo, tamaños mínimos, usos permitidos y prohibidos, y aplicaciones correctas en diferentes contextos.</p>
+      </div>
+
+      <div class="brief-item full">
+        <h4>10 · Contexto cultural y sensibilidad</h4>
+        <p>El primer sitio operacional es en Haití rural. El modelo se replicará eventualmente en América Latina, África subsahariana, y partes del sudeste asiático. El logo debe funcionar respetuosamente en todos estos contextos sin apropiación cultural inapropiada. El símbolo del brote con raíces es intencionalmente universal para evitar marcas culturales específicas. El diseñador debe considerar cómo el logo se verá tanto en una valla publicitaria profesional en Miami como pintado en la pared de un salón humilde en Port-au-Prince — ambos son contextos de uso real.</p>
+      </div>
+
+      <div class="brief-item full">
+        <h4>11 · Presupuesto y tiempos sugeridos</h4>
+        <p>Para un diseñador profesional freelance en América Latina o Miami con experiencia en identidad visual para nonprofits cristianas: rango esperado entre $800 y $2,500 USD por el paquete completo. Tiempo típico de entrega entre 3 y 6 semanas desde la aprobación del brief, con 2 o 3 rondas de iteración incluidas. Plataformas recomendadas para encontrar diseñadores: Upwork, Dribbble, Behance, 99designs (concurso, más barato pero menos control), o referidos personales de la red de Elevon AI.</p>
+      </div>
+
+      <div class="brief-item full">
+        <h4>12 · Proceso recomendado con el diseñador</h4>
+        <p>Primero, entregar este brief junto con el documento de identidad visual provisional que lo acompaña. Segundo, tener una llamada inicial de 30-45 minutos para clarificar preguntas y confirmar alineación. Tercero, recibir 3-5 conceptos iniciales diferentes, elegir la dirección preferida. Cuarto, refinamientos en 1-2 rondas sobre la dirección elegida. Quinto, aprobación final y entrega del paquete completo. Durante todo el proceso, mantener al Pastor Javier informado para su validación pastoral de cualquier elemento con significado teológico.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="container">
+    <p>Refugio Digital · Identidad visual provisional · Abril 2026</p>
+    <p>Este documento es un punto de partida para la fase fundacional del proyecto.</p>
+    <p>La versión final debe ser producida por un diseñador profesional usando el brief incluido.</p>
+    <div class="soli">Soli Deo Gloria</div>
+  </div>
+</footer>
+
+</body>
+</html>

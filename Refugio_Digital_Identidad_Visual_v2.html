@@ -1,0 +1,1445 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Refugio Digital — Identidad Visual v2</title>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --negro: #0A0A0F;
+    --negro-suave: #12121A;
+    --carbon: #1A1A24;
+    --azul-electrico: #2563EB;
+    --azul-intenso: #1D4ED8;
+    --cian-neon: #06B6D4;
+    --neon-acento: #22D3EE;
+    --ambar-calido: #F59E0B;
+    --blanco-hueso: #F5F5F7;
+    --gris-tech: #6B7280;
+    --gris-claro: #9CA3AF;
+    --borde-sutil: #27272F;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Space Grotesk', sans-serif;
+    background: var(--negro);
+    color: var(--blanco-hueso);
+    line-height: 1.6;
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .container {
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 0 40px;
+  }
+
+  /* HERO */
+  .hero {
+    background: var(--negro);
+    padding: 140px 0 120px;
+    position: relative;
+    overflow: hidden;
+    border-bottom: 1px solid var(--borde-sutil);
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-image:
+      radial-gradient(circle at 15% 25%, rgba(37, 99, 235, 0.15) 0%, transparent 45%),
+      radial-gradient(circle at 85% 75%, rgba(6, 182, 212, 0.1) 0%, transparent 45%);
+    pointer-events: none;
+  }
+
+  .hero::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-image:
+      linear-gradient(rgba(6, 182, 212, 0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(6, 182, 212, 0.03) 1px, transparent 1px);
+    background-size: 48px 48px;
+    pointer-events: none;
+  }
+
+  .hero-content { position: relative; z-index: 2; }
+
+  .hero-eyebrow {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: var(--cian-neon);
+    margin-bottom: 32px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .hero-eyebrow::before {
+    content: '';
+    width: 24px;
+    height: 1px;
+    background: var(--cian-neon);
+  }
+
+  .hero h1 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: clamp(56px, 7vw, 96px);
+    font-weight: 600;
+    line-height: 0.95;
+    letter-spacing: -0.035em;
+    margin-bottom: 32px;
+    color: var(--blanco-hueso);
+  }
+
+  .hero h1 span {
+    background: linear-gradient(135deg, var(--cian-neon) 0%, var(--azul-electrico) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: 400;
+  }
+
+  .hero-subtitle {
+    font-size: 20px;
+    color: var(--gris-claro);
+    max-width: 640px;
+    font-weight: 300;
+    line-height: 1.5;
+  }
+
+  .hero-meta {
+    margin-top: 72px;
+    padding-top: 48px;
+    border-top: 1px solid var(--borde-sutil);
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    color: var(--gris-tech);
+  }
+
+  .hero-meta strong {
+    display: block;
+    color: var(--cian-neon);
+    font-weight: 500;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-size: 10px;
+  }
+
+  .hero-meta span {
+    color: var(--blanco-hueso);
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 14px;
+  }
+
+  /* SECTION */
+  section {
+    padding: 120px 0;
+    position: relative;
+  }
+
+  .section-eyebrow {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: var(--cian-neon);
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .section-eyebrow::before {
+    content: '';
+    width: 20px;
+    height: 1px;
+    background: var(--cian-neon);
+  }
+
+  .section-title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: clamp(36px, 5vw, 56px);
+    font-weight: 500;
+    line-height: 1.05;
+    letter-spacing: -0.025em;
+    color: var(--blanco-hueso);
+    margin-bottom: 28px;
+    max-width: 780px;
+  }
+
+  .section-title em {
+    font-style: normal;
+    color: var(--cian-neon);
+    font-weight: 400;
+  }
+
+  .section-intro {
+    font-size: 18px;
+    color: var(--gris-claro);
+    max-width: 720px;
+    margin-bottom: 72px;
+    font-weight: 300;
+    line-height: 1.6;
+  }
+
+  /* CONCEPTO */
+  .concepto-wrapper {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap: 80px;
+    align-items: center;
+  }
+
+  .concepto-texto p {
+    margin-bottom: 22px;
+    color: var(--gris-claro);
+    font-size: 16px;
+    line-height: 1.7;
+  }
+
+  .concepto-texto p strong {
+    color: var(--blanco-hueso);
+    font-weight: 500;
+  }
+
+  /* LOGO PRINCIPAL SHOWCASE */
+  .logo-principal {
+    background: var(--negro-suave);
+    border: 1px solid var(--borde-sutil);
+    padding: 80px 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 560px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .logo-principal::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-image:
+      linear-gradient(rgba(6, 182, 212, 0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(6, 182, 212, 0.04) 1px, transparent 1px);
+    background-size: 32px 32px;
+    pointer-events: none;
+  }
+
+  .logo-principal::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(6, 182, 212, 0.12) 0%, transparent 60%);
+    pointer-events: none;
+  }
+
+  .logo-svg-container {
+    position: relative;
+    z-index: 2;
+  }
+
+  /* Logo corner markers */
+  .corner-marker {
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    border: 1px solid var(--cian-neon);
+    opacity: 0.4;
+  }
+  .corner-marker.tl { top: 20px; left: 20px; border-right: 0; border-bottom: 0; }
+  .corner-marker.tr { top: 20px; right: 20px; border-left: 0; border-bottom: 0; }
+  .corner-marker.bl { bottom: 20px; left: 20px; border-right: 0; border-top: 0; }
+  .corner-marker.br { bottom: 20px; right: 20px; border-left: 0; border-top: 0; }
+
+  /* Anatomy labels */
+  .anatomia {
+    list-style: none;
+    margin-top: 40px;
+  }
+
+  .anatomia li {
+    padding: 20px 0;
+    border-bottom: 1px solid var(--borde-sutil);
+    display: flex;
+    gap: 24px;
+    align-items: start;
+  }
+
+  .anatomia .numero {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    font-weight: 500;
+    color: var(--cian-neon);
+    line-height: 1;
+    margin-top: 4px;
+    min-width: 24px;
+  }
+
+  .anatomia .contenido strong {
+    display: block;
+    font-size: 15px;
+    color: var(--blanco-hueso);
+    margin-bottom: 6px;
+    font-weight: 500;
+  }
+
+  .anatomia .contenido span {
+    font-size: 14px;
+    color: var(--gris-claro);
+    line-height: 1.5;
+  }
+
+  /* LOGO VARIANTES */
+  .seccion-variantes {
+    background: var(--negro-suave);
+    border-top: 1px solid var(--borde-sutil);
+    border-bottom: 1px solid var(--borde-sutil);
+  }
+
+  .variantes-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+    border: 1px solid var(--borde-sutil);
+  }
+
+  .variante-caja {
+    aspect-ratio: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 50px 30px;
+    position: relative;
+    border-right: 1px solid var(--borde-sutil);
+  }
+
+  .variante-caja:last-child {
+    border-right: 0;
+  }
+
+  .variante-caja-label {
+    position: absolute;
+    bottom: 16px;
+    left: 16px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px;
+    font-weight: 500;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--gris-tech);
+  }
+
+  .variante-caja-num {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px;
+    color: var(--gris-tech);
+    letter-spacing: 1px;
+  }
+
+  .fondo-negro { background: var(--negro); }
+  .fondo-carbon { background: var(--carbon); }
+  .fondo-azul { background: var(--azul-electrico); }
+  .fondo-hueso { background: var(--blanco-hueso); }
+
+  .fondo-hueso .variante-caja-label,
+  .fondo-hueso .variante-caja-num {
+    color: var(--gris-tech);
+  }
+
+  .fondo-azul .variante-caja-label,
+  .fondo-azul .variante-caja-num {
+    color: rgba(255,255,255,0.7);
+  }
+
+  /* PALETA */
+  .paleta-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+    border: 1px solid var(--borde-sutil);
+  }
+
+  .color-muestra {
+    aspect-ratio: 0.85;
+    padding: 32px 28px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-right: 1px solid var(--borde-sutil);
+    position: relative;
+  }
+
+  .color-muestra:last-child { border-right: 0; }
+
+  .color-muestra-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+    opacity: 0.7;
+  }
+
+  .color-muestra h4 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 26px;
+    font-weight: 500;
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+  }
+
+  .color-muestra .color-codes {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.5px;
+    opacity: 0.75;
+  }
+
+  .color-muestra .color-codes div {
+    margin-top: 5px;
+  }
+
+  /* TIPOGRAFIA */
+  .tipografia-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    border: 1px solid var(--borde-sutil);
+  }
+
+  .tipo-card {
+    padding: 56px 48px;
+    background: var(--negro-suave);
+    border-right: 1px solid var(--borde-sutil);
+    position: relative;
+  }
+
+  .tipo-card:last-child { border-right: 0; }
+
+  .tipo-nombre {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--cian-neon);
+    margin-bottom: 24px;
+  }
+
+  .tipo-muestra {
+    font-size: 64px;
+    line-height: 1;
+    margin-bottom: 24px;
+    color: var(--blanco-hueso);
+    letter-spacing: -0.03em;
+  }
+
+  .tipo-muestra.grotesk {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 500;
+  }
+
+  .tipo-muestra.mono {
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 500;
+    font-size: 48px;
+  }
+
+  .tipo-uso {
+    font-size: 14px;
+    color: var(--gris-claro);
+    line-height: 1.6;
+  }
+
+  .tipo-uso strong {
+    color: var(--blanco-hueso);
+    font-weight: 500;
+    display: block;
+    margin-bottom: 8px;
+  }
+
+  .tipo-caracteristicas {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 3px;
+    color: var(--gris-tech);
+    margin-top: 32px;
+    padding-top: 24px;
+    border-top: 1px solid var(--borde-sutil);
+  }
+
+  /* APLICACIONES */
+  .apps-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+  }
+
+  .app-card {
+    background: var(--negro-suave);
+    border: 1px solid var(--borde-sutil);
+    overflow: hidden;
+  }
+
+  .app-visual {
+    aspect-ratio: 1.3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 50px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .app-caption {
+    padding: 24px 28px;
+    border-top: 1px solid var(--borde-sutil);
+    background: var(--negro);
+  }
+
+  .app-caption-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    color: var(--cian-neon);
+    letter-spacing: 1.5px;
+    margin-bottom: 6px;
+    text-transform: uppercase;
+  }
+
+  .app-caption h4 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--blanco-hueso);
+    margin-bottom: 4px;
+  }
+
+  .app-caption p {
+    font-size: 13px;
+    color: var(--gris-tech);
+  }
+
+  /* Terminal mock */
+  .mock-terminal {
+    background: var(--negro);
+    border: 1px solid var(--borde-sutil);
+    width: 100%;
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(6, 182, 212, 0.15);
+  }
+
+  .mock-terminal-header {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 10px 14px;
+    border-bottom: 1px solid var(--borde-sutil);
+  }
+
+  .mock-terminal-header span {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--borde-sutil);
+  }
+
+  .mock-terminal-body {
+    padding: 20px 16px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    color: var(--cian-neon);
+    line-height: 1.7;
+  }
+
+  .mock-terminal-body .prompt {
+    color: var(--ambar-calido);
+  }
+
+  .mock-terminal-body .comment {
+    color: var(--gris-tech);
+  }
+
+  /* Dashboard mock */
+  .mock-dashboard {
+    background: var(--negro-suave);
+    border: 1px solid var(--borde-sutil);
+    width: 100%;
+    aspect-ratio: 1.4;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 20px 60px rgba(37, 99, 235, 0.15);
+  }
+
+  .mock-dashboard-nav {
+    padding: 14px 20px;
+    border-bottom: 1px solid var(--borde-sutil);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .mock-dashboard-nav .brand {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--blanco-hueso);
+  }
+
+  .mock-dashboard-body {
+    padding: 18px 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
+    flex: 1;
+  }
+
+  .mock-dashboard-card {
+    background: var(--negro);
+    border: 1px solid var(--borde-sutil);
+    border-radius: 4px;
+    padding: 12px;
+  }
+
+  .mock-dashboard-card .label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 8px;
+    color: var(--gris-tech);
+    margin-bottom: 6px;
+  }
+
+  .mock-dashboard-card .value {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--cian-neon);
+  }
+
+  /* Avatar mock */
+  .mock-avatar-wrap {
+    width: 68%;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background: radial-gradient(circle at 30% 30%, var(--azul-electrico), var(--negro));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 20px 60px rgba(6, 182, 212, 0.25);
+    position: relative;
+  }
+
+  .mock-avatar-wrap::before {
+    content: '';
+    position: absolute;
+    inset: -2px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--cian-neon), var(--azul-electrico), var(--negro));
+    z-index: -1;
+  }
+
+  /* BRIEF */
+  .seccion-brief {
+    background: var(--negro-suave);
+    border-top: 1px solid var(--borde-sutil);
+  }
+
+  .brief-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    margin-top: 56px;
+    border: 1px solid var(--borde-sutil);
+  }
+
+  .brief-item {
+    padding: 40px;
+    background: var(--negro);
+    border-right: 1px solid var(--borde-sutil);
+    border-bottom: 1px solid var(--borde-sutil);
+  }
+
+  .brief-item:nth-child(2n) { border-right: 0; }
+
+  .brief-item h4 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 22px;
+    font-weight: 500;
+    margin-bottom: 18px;
+    color: var(--blanco-hueso);
+    letter-spacing: -0.01em;
+  }
+
+  .brief-item .brief-num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--cian-neon);
+    margin-bottom: 10px;
+    letter-spacing: 1.5px;
+  }
+
+  .brief-item p, .brief-item li {
+    color: var(--gris-claro);
+    font-size: 14px;
+    line-height: 1.7;
+    margin-bottom: 10px;
+  }
+
+  .brief-item ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .brief-item ul li {
+    padding-left: 20px;
+    position: relative;
+  }
+
+  .brief-item ul li::before {
+    content: '›';
+    position: absolute;
+    left: 0;
+    color: var(--cian-neon);
+    font-weight: 500;
+  }
+
+  .brief-item.full {
+    grid-column: 1 / -1;
+    border-right: 0;
+  }
+
+  .brief-item p strong {
+    color: var(--blanco-hueso);
+    font-weight: 500;
+  }
+
+  /* FOOTER */
+  footer {
+    background: var(--negro);
+    border-top: 1px solid var(--borde-sutil);
+    padding: 80px 0 60px;
+    text-align: center;
+  }
+
+  footer p {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--gris-tech);
+    margin-bottom: 8px;
+    letter-spacing: 1px;
+  }
+
+  footer .soli {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 18px;
+    color: var(--cian-neon);
+    margin-top: 32px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 400;
+  }
+
+  @media (max-width: 900px) {
+    .concepto-wrapper, .tipografia-wrapper, .brief-grid { grid-template-columns: 1fr; }
+    .paleta-grid, .variantes-grid { grid-template-columns: repeat(2, 1fr); }
+    .apps-grid { grid-template-columns: 1fr; }
+    .hero-meta { grid-template-columns: repeat(2, 1fr); }
+    .container { padding: 0 24px; }
+    section { padding: 80px 0; }
+    .hero { padding: 100px 0 80px; }
+    .brief-item { border-right: 0 !important; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ HERO ============ -->
+<header class="hero">
+  <div class="container hero-content">
+    <div class="hero-eyebrow">v2.0 · Identidad visual · Abril 2026</div>
+    <h1>Refugio<br>Digital<span>_</span></h1>
+    <p class="hero-subtitle">Un hexágono estructural que contiene una red neural activa. Tecnología de frontera con un acento humano casi imperceptible. El refugio del siglo XXI es un nodo en la red del Reino.</p>
+    <div class="hero-meta">
+      <div>
+        <strong>Concepto</strong>
+        <span>Hexágono + red neural</span>
+      </div>
+      <div>
+        <strong>Posicionamiento</strong>
+        <span>AI-first profesional</span>
+      </div>
+      <div>
+        <strong>Paleta</strong>
+        <span>Negro · azul eléctrico · neón</span>
+      </div>
+      <div>
+        <strong>Tipografía</strong>
+        <span>Space Grotesk · JetBrains Mono</span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ============ CONCEPTO ============ -->
+<section>
+  <div class="container">
+    <div class="concepto-wrapper">
+      <div>
+        <div class="section-eyebrow">01 — El concepto</div>
+        <h2 class="section-title">Un <em>nodo</em> en la red del Reino</h2>
+        <div class="concepto-texto">
+          <p>El logo anterior pecó de ser demasiado orgánico, demasiado agrícola. Este es la inversión deliberada de esa dirección: un símbolo que se lee inmediatamente como <strong>tecnología de frontera</strong> ante cualquier director de fundación tecnológica, ingeniero de AI, o socio estratégico en el espacio de Anthropic, OpenAI, o AWS.</p>
+
+          <p>La forma base es un <strong>hexágono</strong>, figura universalmente asociada con sistemas modulares en tecnología: blockchain, chemistry, circuit design, modular architecture. Los hexágonos se replican y conectan para formar estructuras más grandes, lo cual refleja directamente el modelo de replicación de Refugio Digital a múltiples sitios globales conectados en una red.</p>
+
+          <p>Dentro del hexágono vive una <strong>red neural activa</strong>: cinco nodos conectados por líneas limpias que sugieren flujo de datos, conexiones de inferencia, la arquitectura básica de una red de aprendizaje. El nodo central está ligeramente desplazado del centro matemático — una asimetría deliberada y casi imperceptible que introduce el único elemento humano del logo. La tecnología es perfecta; el corazón late ligeramente fuera del centro.</p>
+
+          <p>El hexágono tiene una <strong>apertura sutil</strong> en uno de sus vértices superiores. Es la puerta del refugio. Un sistema cerrado sería una cárcel; un sistema completamente abierto no sería refugio. La apertura precisa es lo que hace que el hexágono sea al mismo tiempo protector y acogedor — y también técnicamente correcto, porque ningún sistema tecnológico real está completamente cerrado.</p>
+        </div>
+
+        <ul class="anatomia">
+          <li>
+            <span class="numero">01</span>
+            <div class="contenido">
+              <strong>Hexágono exterior</strong>
+              <span>Estructura modular tecnológica. Refugio. Sistema replicable. La forma del módulo en red.</span>
+            </div>
+          </li>
+          <li>
+            <span class="numero">02</span>
+            <div class="contenido">
+              <strong>Red neural interior</strong>
+              <span>Cinco nodos conectados que sugieren inferencia, aprendizaje automático, flujo de datos.</span>
+            </div>
+          </li>
+          <li>
+            <span class="numero">03</span>
+            <div class="contenido">
+              <strong>Nodo central ámbar</strong>
+              <span>El único acento cálido del logo. Ligeramente descentrado. Humanidad dentro del sistema.</span>
+            </div>
+          </li>
+          <li>
+            <span class="numero">04</span>
+            <div class="contenido">
+              <strong>Apertura superior</strong>
+              <span>Micro-interrupción en el vértice. Refugio abierto, no cárcel cerrada. Puerta al sistema.</span>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <!-- LOGO PRINCIPAL -->
+      <div class="logo-principal">
+        <div class="corner-marker tl"></div>
+        <div class="corner-marker tr"></div>
+        <div class="corner-marker bl"></div>
+        <div class="corner-marker br"></div>
+        <div class="logo-svg-container">
+          <svg viewBox="0 0 320 400" width="100%" style="max-width: 360px;">
+            <!-- HEXÁGONO EXTERIOR con apertura superior -->
+            <g>
+              <!-- Hexágono con gap en el top-right vertex -->
+              <path d="
+                M 160 40
+                L 165 42
+                M 175 48
+                L 270 103
+                L 270 213
+                L 160 275
+                L 50 213
+                L 50 103
+                L 145 48
+                L 155 42
+              "
+              fill="none"
+              stroke="#06B6D4"
+              stroke-width="3"
+              stroke-linecap="round"
+              stroke-linejoin="round"/>
+
+              <!-- Brillo sutil del hexágono -->
+              <path d="
+                M 175 48
+                L 270 103
+                L 270 213
+                L 160 275
+                L 50 213
+                L 50 103
+                L 145 48
+              "
+              fill="none"
+              stroke="#06B6D4"
+              stroke-width="1"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              opacity="0.25"
+              transform="scale(1.08) translate(-13, -13)"/>
+            </g>
+
+            <!-- RED NEURAL INTERIOR -->
+            <!-- Conexiones -->
+            <g stroke="#2563EB" stroke-width="1.8" fill="none" stroke-linecap="round" opacity="0.9">
+              <!-- Del nodo central a los 4 nodos periféricos -->
+              <line x1="163" y1="155" x2="105" y2="110"/>
+              <line x1="163" y1="155" x2="215" y2="110"/>
+              <line x1="163" y1="155" x2="105" y2="205"/>
+              <line x1="163" y1="155" x2="215" y2="205"/>
+
+              <!-- Conexiones periféricas (red completa) -->
+              <line x1="105" y1="110" x2="215" y2="110" stroke-width="1.2" opacity="0.5"/>
+              <line x1="105" y1="205" x2="215" y2="205" stroke-width="1.2" opacity="0.5"/>
+              <line x1="105" y1="110" x2="105" y2="205" stroke-width="1.2" opacity="0.5"/>
+              <line x1="215" y1="110" x2="215" y2="205" stroke-width="1.2" opacity="0.5"/>
+            </g>
+
+            <!-- Nodos periféricos (azul eléctrico) -->
+            <g>
+              <!-- Nodo superior izquierdo -->
+              <circle cx="105" cy="110" r="8" fill="#0A0A0F" stroke="#2563EB" stroke-width="2.5"/>
+              <circle cx="105" cy="110" r="3" fill="#2563EB"/>
+
+              <!-- Nodo superior derecho -->
+              <circle cx="215" cy="110" r="8" fill="#0A0A0F" stroke="#2563EB" stroke-width="2.5"/>
+              <circle cx="215" cy="110" r="3" fill="#2563EB"/>
+
+              <!-- Nodo inferior izquierdo -->
+              <circle cx="105" cy="205" r="8" fill="#0A0A0F" stroke="#2563EB" stroke-width="2.5"/>
+              <circle cx="105" cy="205" r="3" fill="#2563EB"/>
+
+              <!-- Nodo inferior derecho -->
+              <circle cx="215" cy="205" r="8" fill="#0A0A0F" stroke="#2563EB" stroke-width="2.5"/>
+              <circle cx="215" cy="205" r="3" fill="#2563EB"/>
+            </g>
+
+            <!-- NODO CENTRAL (ligeramente descentrado, ámbar) -->
+            <g>
+              <circle cx="163" cy="155" r="14" fill="#0A0A0F" stroke="#F59E0B" stroke-width="2.5"/>
+              <circle cx="163" cy="155" r="8" fill="#F59E0B"/>
+              <circle cx="163" cy="155" r="3.5" fill="#FEF3C7"/>
+              <!-- Anillo pulsante sutil -->
+              <circle cx="163" cy="155" r="20" fill="none" stroke="#F59E0B" stroke-width="0.8" opacity="0.35"/>
+            </g>
+
+            <!-- WORDMARK -->
+            <text x="160" y="325" text-anchor="middle" font-family="Space Grotesk, sans-serif" font-size="28" font-weight="600" fill="#F5F5F7" letter-spacing="-1">REFUGIO</text>
+            <text x="160" y="352" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="12" font-weight="400" fill="#06B6D4" letter-spacing="3.5">DIGITAL_</text>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ LOGO VARIANTES ============ -->
+<section class="seccion-variantes">
+  <div class="container">
+    <div class="section-eyebrow">02 — Variantes del sistema</div>
+    <h2 class="section-title">Consistencia en cualquier <em>contexto</em></h2>
+    <p class="section-intro">El logo funciona en cuatro variantes principales que cubren todos los casos de uso reales del proyecto: fondo oscuro primario, fondo blanco para documentos formales, variante mono sobre azul eléctrico, y versión solo ícono para avatares.</p>
+
+    <div class="variantes-grid">
+      <!-- VARIANTE 1: Primario sobre negro -->
+      <div class="variante-caja fondo-negro">
+        <div class="variante-caja-num">01/04</div>
+        <svg viewBox="0 0 200 260" width="130">
+          <path d="M 100 25 L 105 27 M 115 33 L 170 65 L 170 135 L 100 175 L 30 135 L 30 65 L 85 33 L 95 27" fill="none" stroke="#06B6D4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <g stroke="#2563EB" stroke-width="1.3" fill="none" stroke-linecap="round" opacity="0.9">
+            <line x1="102" y1="100" x2="65" y2="72"/>
+            <line x1="102" y1="100" x2="135" y2="72"/>
+            <line x1="102" y1="100" x2="65" y2="132"/>
+            <line x1="102" y1="100" x2="135" y2="132"/>
+            <line x1="65" y1="72" x2="135" y2="72" stroke-width="0.9" opacity="0.5"/>
+            <line x1="65" y1="132" x2="135" y2="132" stroke-width="0.9" opacity="0.5"/>
+            <line x1="65" y1="72" x2="65" y2="132" stroke-width="0.9" opacity="0.5"/>
+            <line x1="135" y1="72" x2="135" y2="132" stroke-width="0.9" opacity="0.5"/>
+          </g>
+          <circle cx="65" cy="72" r="5" fill="#0A0A0F" stroke="#2563EB" stroke-width="1.8"/>
+          <circle cx="65" cy="72" r="2" fill="#2563EB"/>
+          <circle cx="135" cy="72" r="5" fill="#0A0A0F" stroke="#2563EB" stroke-width="1.8"/>
+          <circle cx="135" cy="72" r="2" fill="#2563EB"/>
+          <circle cx="65" cy="132" r="5" fill="#0A0A0F" stroke="#2563EB" stroke-width="1.8"/>
+          <circle cx="65" cy="132" r="2" fill="#2563EB"/>
+          <circle cx="135" cy="132" r="5" fill="#0A0A0F" stroke="#2563EB" stroke-width="1.8"/>
+          <circle cx="135" cy="132" r="2" fill="#2563EB"/>
+          <circle cx="102" cy="100" r="9" fill="#0A0A0F" stroke="#F59E0B" stroke-width="1.8"/>
+          <circle cx="102" cy="100" r="5" fill="#F59E0B"/>
+          <circle cx="102" cy="100" r="2" fill="#FEF3C7"/>
+          <text x="100" y="210" text-anchor="middle" font-family="Space Grotesk, sans-serif" font-size="17" font-weight="600" fill="#F5F5F7" letter-spacing="-0.5">REFUGIO</text>
+          <text x="100" y="227" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="8" fill="#06B6D4" letter-spacing="2.5">DIGITAL_</text>
+        </svg>
+        <div class="variante-caja-label">Primario oscuro</div>
+      </div>
+
+      <!-- VARIANTE 2: Sobre fondo hueso -->
+      <div class="variante-caja fondo-hueso">
+        <div class="variante-caja-num">02/04</div>
+        <svg viewBox="0 0 200 260" width="130">
+          <path d="M 100 25 L 105 27 M 115 33 L 170 65 L 170 135 L 100 175 L 30 135 L 30 65 L 85 33 L 95 27" fill="none" stroke="#0A0A0F" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+          <g stroke="#1D4ED8" stroke-width="1.4" fill="none" stroke-linecap="round">
+            <line x1="102" y1="100" x2="65" y2="72"/>
+            <line x1="102" y1="100" x2="135" y2="72"/>
+            <line x1="102" y1="100" x2="65" y2="132"/>
+            <line x1="102" y1="100" x2="135" y2="132"/>
+            <line x1="65" y1="72" x2="135" y2="72" stroke-width="0.9" opacity="0.4"/>
+            <line x1="65" y1="132" x2="135" y2="132" stroke-width="0.9" opacity="0.4"/>
+            <line x1="65" y1="72" x2="65" y2="132" stroke-width="0.9" opacity="0.4"/>
+            <line x1="135" y1="72" x2="135" y2="132" stroke-width="0.9" opacity="0.4"/>
+          </g>
+          <circle cx="65" cy="72" r="5" fill="#F5F5F7" stroke="#1D4ED8" stroke-width="2"/>
+          <circle cx="65" cy="72" r="2" fill="#1D4ED8"/>
+          <circle cx="135" cy="72" r="5" fill="#F5F5F7" stroke="#1D4ED8" stroke-width="2"/>
+          <circle cx="135" cy="72" r="2" fill="#1D4ED8"/>
+          <circle cx="65" cy="132" r="5" fill="#F5F5F7" stroke="#1D4ED8" stroke-width="2"/>
+          <circle cx="65" cy="132" r="2" fill="#1D4ED8"/>
+          <circle cx="135" cy="132" r="5" fill="#F5F5F7" stroke="#1D4ED8" stroke-width="2"/>
+          <circle cx="135" cy="132" r="2" fill="#1D4ED8"/>
+          <circle cx="102" cy="100" r="9" fill="#F5F5F7" stroke="#D97706" stroke-width="2"/>
+          <circle cx="102" cy="100" r="5" fill="#F59E0B"/>
+          <circle cx="102" cy="100" r="2" fill="#FEF3C7"/>
+          <text x="100" y="210" text-anchor="middle" font-family="Space Grotesk, sans-serif" font-size="17" font-weight="600" fill="#0A0A0F" letter-spacing="-0.5">REFUGIO</text>
+          <text x="100" y="227" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="8" fill="#1D4ED8" letter-spacing="2.5">DIGITAL_</text>
+        </svg>
+        <div class="variante-caja-label">Light mode</div>
+      </div>
+
+      <!-- VARIANTE 3: Sobre azul eléctrico -->
+      <div class="variante-caja fondo-azul">
+        <div class="variante-caja-num">03/04</div>
+        <svg viewBox="0 0 200 260" width="130">
+          <path d="M 100 25 L 105 27 M 115 33 L 170 65 L 170 135 L 100 175 L 30 135 L 30 65 L 85 33 L 95 27" fill="none" stroke="#F5F5F7" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+          <g stroke="#F5F5F7" stroke-width="1.4" fill="none" stroke-linecap="round" opacity="0.85">
+            <line x1="102" y1="100" x2="65" y2="72"/>
+            <line x1="102" y1="100" x2="135" y2="72"/>
+            <line x1="102" y1="100" x2="65" y2="132"/>
+            <line x1="102" y1="100" x2="135" y2="132"/>
+            <line x1="65" y1="72" x2="135" y2="72" stroke-width="0.9" opacity="0.5"/>
+            <line x1="65" y1="132" x2="135" y2="132" stroke-width="0.9" opacity="0.5"/>
+            <line x1="65" y1="72" x2="65" y2="132" stroke-width="0.9" opacity="0.5"/>
+            <line x1="135" y1="72" x2="135" y2="132" stroke-width="0.9" opacity="0.5"/>
+          </g>
+          <circle cx="65" cy="72" r="5" fill="#2563EB" stroke="#F5F5F7" stroke-width="2"/>
+          <circle cx="65" cy="72" r="2" fill="#F5F5F7"/>
+          <circle cx="135" cy="72" r="5" fill="#2563EB" stroke="#F5F5F7" stroke-width="2"/>
+          <circle cx="135" cy="72" r="2" fill="#F5F5F7"/>
+          <circle cx="65" cy="132" r="5" fill="#2563EB" stroke="#F5F5F7" stroke-width="2"/>
+          <circle cx="65" cy="132" r="2" fill="#F5F5F7"/>
+          <circle cx="135" cy="132" r="5" fill="#2563EB" stroke="#F5F5F7" stroke-width="2"/>
+          <circle cx="135" cy="132" r="2" fill="#F5F5F7"/>
+          <circle cx="102" cy="100" r="9" fill="#2563EB" stroke="#F59E0B" stroke-width="2"/>
+          <circle cx="102" cy="100" r="5" fill="#F59E0B"/>
+          <circle cx="102" cy="100" r="2" fill="#FEF3C7"/>
+          <text x="100" y="210" text-anchor="middle" font-family="Space Grotesk, sans-serif" font-size="17" font-weight="600" fill="#F5F5F7" letter-spacing="-0.5">REFUGIO</text>
+          <text x="100" y="227" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="8" fill="#F5F5F7" letter-spacing="2.5" opacity="0.85">DIGITAL_</text>
+        </svg>
+        <div class="variante-caja-label">Brand azul</div>
+      </div>
+
+      <!-- VARIANTE 4: Solo icono -->
+      <div class="variante-caja fondo-carbon">
+        <div class="variante-caja-num">04/04</div>
+        <svg viewBox="0 0 200 200" width="120">
+          <path d="M 100 20 L 106 23 M 118 30 L 178 65 L 178 135 L 100 180 L 22 135 L 22 65 L 82 30 L 94 23" fill="none" stroke="#06B6D4" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <g stroke="#2563EB" stroke-width="1.8" fill="none" stroke-linecap="round" opacity="0.9">
+            <line x1="103" y1="102" x2="58" y2="70"/>
+            <line x1="103" y1="102" x2="142" y2="70"/>
+            <line x1="103" y1="102" x2="58" y2="138"/>
+            <line x1="103" y1="102" x2="142" y2="138"/>
+            <line x1="58" y1="70" x2="142" y2="70" stroke-width="1.1" opacity="0.5"/>
+            <line x1="58" y1="138" x2="142" y2="138" stroke-width="1.1" opacity="0.5"/>
+            <line x1="58" y1="70" x2="58" y2="138" stroke-width="1.1" opacity="0.5"/>
+            <line x1="142" y1="70" x2="142" y2="138" stroke-width="1.1" opacity="0.5"/>
+          </g>
+          <circle cx="58" cy="70" r="6.5" fill="#1A1A24" stroke="#2563EB" stroke-width="2.2"/>
+          <circle cx="58" cy="70" r="2.5" fill="#2563EB"/>
+          <circle cx="142" cy="70" r="6.5" fill="#1A1A24" stroke="#2563EB" stroke-width="2.2"/>
+          <circle cx="142" cy="70" r="2.5" fill="#2563EB"/>
+          <circle cx="58" cy="138" r="6.5" fill="#1A1A24" stroke="#2563EB" stroke-width="2.2"/>
+          <circle cx="58" cy="138" r="2.5" fill="#2563EB"/>
+          <circle cx="142" cy="138" r="6.5" fill="#1A1A24" stroke="#2563EB" stroke-width="2.2"/>
+          <circle cx="142" cy="138" r="2.5" fill="#2563EB"/>
+          <circle cx="103" cy="102" r="11" fill="#1A1A24" stroke="#F59E0B" stroke-width="2.2"/>
+          <circle cx="103" cy="102" r="6" fill="#F59E0B"/>
+          <circle cx="103" cy="102" r="2.5" fill="#FEF3C7"/>
+        </svg>
+        <div class="variante-caja-label">Solo ícono</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PALETA ============ -->
+<section>
+  <div class="container">
+    <div class="section-eyebrow">03 — Paleta cromática</div>
+    <h2 class="section-title">Negro, azul eléctrico y <em>neón</em></h2>
+    <p class="section-intro">La paleta abandona completamente la dirección agrícola anterior. Todo gira alrededor de la estética dark-mode-first que domina el espacio de herramientas AI profesionales: negro profundo como base, azul eléctrico para estructura, cian neón para acentos digitales, y un único toque de ámbar que humaniza sin romper el posicionamiento tecnológico.</p>
+
+    <div class="paleta-grid">
+      <div class="color-muestra" style="background: #0A0A0F; color: #F5F5F7;">
+        <div>
+          <div class="color-muestra-label">PRIMARIO</div>
+          <h4>Negro<br>Profundo</h4>
+        </div>
+        <div class="color-codes">
+          <div>HEX &nbsp;&nbsp; #0A0A0F</div>
+          <div>RGB &nbsp;&nbsp; 10, 10, 15</div>
+          <div>USO &nbsp;&nbsp; Base / fondos</div>
+        </div>
+      </div>
+
+      <div class="color-muestra" style="background: #2563EB; color: #F5F5F7;">
+        <div>
+          <div class="color-muestra-label">BRAND</div>
+          <h4>Azul<br>Eléctrico</h4>
+        </div>
+        <div class="color-codes">
+          <div>HEX &nbsp;&nbsp; #2563EB</div>
+          <div>RGB &nbsp;&nbsp; 37, 99, 235</div>
+          <div>USO &nbsp;&nbsp; Marca / estructura</div>
+        </div>
+      </div>
+
+      <div class="color-muestra" style="background: #06B6D4; color: #0A0A0F;">
+        <div>
+          <div class="color-muestra-label">ACENTO TECH</div>
+          <h4>Cian<br>Neón</h4>
+        </div>
+        <div class="color-codes">
+          <div>HEX &nbsp;&nbsp; #06B6D4</div>
+          <div>RGB &nbsp;&nbsp; 6, 182, 212</div>
+          <div>USO &nbsp;&nbsp; Acentos / detalles</div>
+        </div>
+      </div>
+
+      <div class="color-muestra" style="background: #F59E0B; color: #0A0A0F;">
+        <div>
+          <div class="color-muestra-label">ACENTO HUMANO</div>
+          <h4>Ámbar<br>Cálido</h4>
+        </div>
+        <div class="color-codes">
+          <div>HEX &nbsp;&nbsp; #F59E0B</div>
+          <div>RGB &nbsp;&nbsp; 245, 158, 11</div>
+          <div>USO &nbsp;&nbsp; Solo nodo central</div>
+        </div>
+      </div>
+
+      <div class="color-muestra" style="background: #1A1A24; color: #F5F5F7; border-top: 1px solid #27272F;">
+        <div>
+          <div class="color-muestra-label">SUPERFICIE</div>
+          <h4>Carbón<br>UI</h4>
+        </div>
+        <div class="color-codes">
+          <div>HEX &nbsp;&nbsp; #1A1A24</div>
+          <div>RGB &nbsp;&nbsp; 26, 26, 36</div>
+          <div>USO &nbsp;&nbsp; Cards / paneles</div>
+        </div>
+      </div>
+
+      <div class="color-muestra" style="background: #1D4ED8; color: #F5F5F7; border-top: 1px solid #27272F;">
+        <div>
+          <div class="color-muestra-label">APOYO</div>
+          <h4>Azul<br>Intenso</h4>
+        </div>
+        <div class="color-codes">
+          <div>HEX &nbsp;&nbsp; #1D4ED8</div>
+          <div>RGB &nbsp;&nbsp; 29, 78, 216</div>
+          <div>USO &nbsp;&nbsp; Light mode / links</div>
+        </div>
+      </div>
+
+      <div class="color-muestra" style="background: #6B7280; color: #F5F5F7; border-top: 1px solid #27272F;">
+        <div>
+          <div class="color-muestra-label">NEUTRAL</div>
+          <h4>Gris<br>Tech</h4>
+        </div>
+        <div class="color-codes">
+          <div>HEX &nbsp;&nbsp; #6B7280</div>
+          <div>RGB &nbsp;&nbsp; 107, 114, 128</div>
+          <div>USO &nbsp;&nbsp; Texto secundario</div>
+        </div>
+      </div>
+
+      <div class="color-muestra" style="background: #F5F5F7; color: #0A0A0F; border-top: 1px solid #27272F;">
+        <div>
+          <div class="color-muestra-label">CONTRASTE</div>
+          <h4>Blanco<br>Hueso</h4>
+        </div>
+        <div class="color-codes">
+          <div>HEX &nbsp;&nbsp; #F5F5F7</div>
+          <div>RGB &nbsp;&nbsp; 245, 245, 247</div>
+          <div>USO &nbsp;&nbsp; Texto / light bg</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TIPOGRAFIA ============ -->
+<section style="background: var(--negro-suave); border-top: 1px solid var(--borde-sutil); border-bottom: 1px solid var(--borde-sutil);">
+  <div class="container">
+    <div class="section-eyebrow">04 — Sistema tipográfico</div>
+    <h2 class="section-title">Space Grotesk con <em>JetBrains Mono</em></h2>
+    <p class="section-intro">Dos tipografías construidas explícitamente para el mundo tech contemporáneo. Space Grotesk es la sans-serif que ves en startups de AI serias (Linear, Vercel, Supabase, Anthropic). JetBrains Mono es la monospace que todo developer profesional usa en su editor. Juntas comunican pertenencia inmediata al ecosistema tecnológico sin decir una palabra.</p>
+
+    <div class="tipografia-wrapper">
+      <div class="tipo-card">
+        <div class="tipo-nombre">DISPLAY · HEADLINES</div>
+        <div class="tipo-muestra grotesk">Refugio</div>
+        <div class="tipo-uso">
+          <strong>Space Grotesk</strong>
+          Sans-serif geométrica moderna con carácter técnico pero no frío. Usada por Linear, Figma Config, múltiples startups de AI. Disponible en Google Fonts. Úsala para titulares, nombre del proyecto, navegación principal.
+        </div>
+        <div class="tipo-caracteristicas">ABCDEF · 012345 · →↓↑</div>
+      </div>
+
+      <div class="tipo-card">
+        <div class="tipo-nombre">MONO · CÓDIGO · META</div>
+        <div class="tipo-muestra mono">DIGITAL_</div>
+        <div class="tipo-uso">
+          <strong>JetBrains Mono</strong>
+          Tipografía monospace diseñada específicamente para developers. Acentúa la identidad tech del proyecto. Úsala para etiquetas, metadatos, códigos de color, versión, elementos de terminal, y el wordmark secundario "DIGITAL_".
+        </div>
+        <div class="tipo-caracteristicas">{ } · [ ] · &lt;/&gt; · v2.0</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ APLICACIONES ============ -->
+<section>
+  <div class="container">
+    <div class="section-eyebrow">05 — Aplicaciones</div>
+    <h2 class="section-title">En contextos <em>reales</em></h2>
+    <p class="section-intro">Tres aplicaciones que demuestran cómo la nueva identidad funciona en los espacios donde el proyecto realmente vive: terminal del developer, dashboard de operaciones, y avatar profesional para LinkedIn y redes.</p>
+
+    <div class="apps-grid">
+      <!-- APP 1: Terminal -->
+      <div class="app-card">
+        <div class="app-visual" style="background: radial-gradient(circle at 30% 30%, rgba(37, 99, 235, 0.15) 0%, var(--negro) 70%);">
+          <div class="mock-terminal">
+            <div class="mock-terminal-header">
+              <span></span><span></span><span></span>
+            </div>
+            <div class="mock-terminal-body">
+              <div class="comment">// refugio-digital cli v2.0</div>
+              <div><span class="prompt">$</span> rd status --all</div>
+              <div style="color: #F5F5F7;">sites.active &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1</div>
+              <div style="color: #F5F5F7;">students.enrolled &nbsp; 15</div>
+              <div style="color: #F5F5F7;">uptime &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 99.8%</div>
+              <div><span class="prompt">$</span> <span style="color: #F5F5F7;">rd deploy haiti-01</span></div>
+              <div style="color: #F59E0B;">→ ready_</div>
+            </div>
+          </div>
+        </div>
+        <div class="app-caption">
+          <div class="app-caption-label">CLI / TERMINAL</div>
+          <h4>Herramientas del developer</h4>
+          <p>Scripts, CLI, interfaces técnicas del equipo operacional</p>
+        </div>
+      </div>
+
+      <!-- APP 2: Dashboard -->
+      <div class="app-card">
+        <div class="app-visual" style="background: radial-gradient(circle at 70% 30%, rgba(6, 182, 212, 0.15) 0%, var(--negro) 70%);">
+          <div class="mock-dashboard">
+            <div class="mock-dashboard-nav">
+              <svg viewBox="0 0 40 40" width="20">
+                <path d="M 20 5 L 21 5.5 M 23 7 L 34 13 L 34 27 L 20 35 L 6 27 L 6 13 L 17 7 L 19 5.5" fill="none" stroke="#06B6D4" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"/>
+                <circle cx="20" cy="20" r="3" fill="#F59E0B"/>
+                <circle cx="12" cy="14" r="1.5" fill="#2563EB"/>
+                <circle cx="28" cy="14" r="1.5" fill="#2563EB"/>
+                <circle cx="12" cy="26" r="1.5" fill="#2563EB"/>
+                <circle cx="28" cy="26" r="1.5" fill="#2563EB"/>
+              </svg>
+              <div class="brand">Refugio Digital<span style="color: #06B6D4; font-family: 'JetBrains Mono', monospace; font-size: 9px; margin-left: 4px;">ADMIN</span></div>
+            </div>
+            <div class="mock-dashboard-body">
+              <div class="mock-dashboard-card">
+                <div class="label">STUDENTS</div>
+                <div class="value">15</div>
+              </div>
+              <div class="mock-dashboard-card">
+                <div class="label">LEVEL_3</div>
+                <div class="value">4</div>
+              </div>
+              <div class="mock-dashboard-card">
+                <div class="label">INCOME</div>
+                <div class="value" style="color: #F59E0B;">$2.4k</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="app-caption">
+          <div class="app-caption-label">ADMIN DASHBOARD</div>
+          <h4>Panel operacional</h4>
+          <p>Interfaz de gestión de sitios para coordinadores y equipo central</p>
+        </div>
+      </div>
+
+      <!-- APP 3: Avatar -->
+      <div class="app-card">
+        <div class="app-visual" style="background: radial-gradient(circle at 50% 50%, var(--carbon) 0%, var(--negro) 100%);">
+          <div class="mock-avatar-wrap">
+            <svg viewBox="0 0 200 200" width="75%">
+              <path d="M 100 22 L 106 25 M 118 32 L 178 66 L 178 134 L 100 178 L 22 134 L 22 66 L 82 32 L 94 25" fill="none" stroke="#06B6D4" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>
+              <g stroke="#F5F5F7" stroke-width="1.8" fill="none" stroke-linecap="round" opacity="0.9">
+                <line x1="103" y1="100" x2="58" y2="70"/>
+                <line x1="103" y1="100" x2="142" y2="70"/>
+                <line x1="103" y1="100" x2="58" y2="130"/>
+                <line x1="103" y1="100" x2="142" y2="130"/>
+              </g>
+              <circle cx="58" cy="70" r="6" fill="#0A0A0F" stroke="#F5F5F7" stroke-width="2"/>
+              <circle cx="142" cy="70" r="6" fill="#0A0A0F" stroke="#F5F5F7" stroke-width="2"/>
+              <circle cx="58" cy="130" r="6" fill="#0A0A0F" stroke="#F5F5F7" stroke-width="2"/>
+              <circle cx="142" cy="130" r="6" fill="#0A0A0F" stroke="#F5F5F7" stroke-width="2"/>
+              <circle cx="103" cy="100" r="13" fill="#0A0A0F" stroke="#F59E0B" stroke-width="2.5"/>
+              <circle cx="103" cy="100" r="7" fill="#F59E0B"/>
+              <circle cx="103" cy="100" r="3" fill="#FEF3C7"/>
+            </svg>
+          </div>
+        </div>
+        <div class="app-caption">
+          <div class="app-caption-label">SOCIAL AVATAR</div>
+          <h4>Perfil en redes</h4>
+          <p>LinkedIn, X, GitHub, Discord — espacios profesionales tech</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ BRIEF ============ -->
+<section class="seccion-brief">
+  <div class="container">
+    <div class="section-eyebrow">06 — Brief para diseñador profesional</div>
+    <h2 class="section-title">Para la versión <em>final</em></h2>
+    <p class="section-intro">Este brief actualizado captura todas las decisiones de la versión tech-forward. Llevarlo a un diseñador profesional con experiencia en identidad de marca para startups de tecnología acelera significativamente la producción del logo definitivo.</p>
+
+    <div class="brief-grid">
+      <div class="brief-item">
+        <div class="brief-num">01</div>
+        <h4>Proyecto</h4>
+        <p><strong>Refugio Digital Foundation</strong> — organización que opera educación integral en inteligencia artificial para jóvenes en comunidades pobres. Primer sitio: Laboratorio Haití. Posicionamiento: AI-first con dimensión misional cristiana sutil.</p>
+      </div>
+
+      <div class="brief-item">
+        <div class="brief-num">02</div>
+        <h4>Posicionamiento visual</h4>
+        <p>El logo debe leerse <strong>inmediatamente como tech de frontera</strong> ante directores de fundaciones tecnológicas (AWS Imagine, Google.org), ejecutivos de empresas AI (Anthropic, OpenAI), y socios en el ecosistema de herramientas de desarrollo. La dimensión cristiana/humana vive en el copy, no en el símbolo.</p>
+      </div>
+
+      <div class="brief-item">
+        <div class="brief-num">03</div>
+        <h4>Concepto central</h4>
+        <p>Hexágono modular (estructura, refugio, sistema replicable) con una red neural activa de cinco nodos en el interior (AI, conexiones, flujo de datos). Nodo central ligeramente descentrado en ámbar — único elemento humano. Apertura sutil en vértice superior del hexágono.</p>
+      </div>
+
+      <div class="brief-item">
+        <div class="brief-num">04</div>
+        <h4>Tono deseado</h4>
+        <ul>
+          <li>Tech-forward profesional</li>
+          <li>Dark-mode-first estético</li>
+          <li>Minimalista preciso, no maximalista</li>
+          <li>Geometría limpia sin decoración</li>
+          <li>Humano solo en el punto ámbar</li>
+        </ul>
+      </div>
+
+      <div class="brief-item">
+        <div class="brief-num">05</div>
+        <h4>Paleta obligatoria</h4>
+        <ul>
+          <li>Negro #0A0A0F (base)</li>
+          <li>Azul Eléctrico #2563EB (brand)</li>
+          <li>Cian Neón #06B6D4 (acento tech)</li>
+          <li>Ámbar #F59E0B (único acento humano)</li>
+          <li>Blanco Hueso #F5F5F7 (contraste)</li>
+        </ul>
+      </div>
+
+      <div class="brief-item">
+        <div class="brief-num">06</div>
+        <h4>Tipografía sistema</h4>
+        <p><strong>Space Grotesk</strong> para display y titulares. <strong>JetBrains Mono</strong> para metadatos, wordmark secundario, y elementos técnicos. Ambas en Google Fonts, gratuitas, amplia disponibilidad. El diseñador puede proponer alternativas solo si tiene razones fuertes.</p>
+      </div>
+
+      <div class="brief-item">
+        <div class="brief-num">07</div>
+        <h4>Referencias visuales</h4>
+        <ul>
+          <li>Anthropic · líneas curvas minimalistas</li>
+          <li>Linear · hexágono + tipografía Grotesk</li>
+          <li>Vercel · triángulo geométrico perfecto</li>
+          <li>Supabase · contenedor con elemento interior</li>
+          <li>Hex Technologies · hexagonal modular</li>
+        </ul>
+      </div>
+
+      <div class="brief-item">
+        <div class="brief-num">08</div>
+        <h4>Elementos a EVITAR</h4>
+        <ul>
+          <li>Cualquier elemento orgánico/botánico</li>
+          <li>Hojas, brotes, plantas, raíces literales</li>
+          <li>Cruces, palomas, símbolos cristianos</li>
+          <li>Gradientes morados estilo AI genérico</li>
+          <li>Imaginería de niños o manos</li>
+          <li>Tipografías Inter, Roboto, Arial</li>
+        </ul>
+      </div>
+
+      <div class="brief-item full">
+        <div class="brief-num">09</div>
+        <h4>Entregables esperados</h4>
+        <p>Un paquete completo de identidad visual que incluya: versión horizontal, versión vertical, versión solo ícono, variantes sobre los cuatro fondos (negro, blanco hueso, azul eléctrico, carbón), favicon en 16px y 32px, avatar circular para redes sociales, y plantillas de aplicación. Archivos en formatos vectoriales editables (SVG, AI, EPS) además de PNG transparente en múltiples resoluciones. Un manual breve de uso de marca (3-5 páginas) que documente espaciado mínimo, tamaños mínimos, usos correctos e incorrectos, y aplicaciones en los principales contextos.</p>
+      </div>
+
+      <div class="brief-item full">
+        <div class="brief-num">10</div>
+        <h4>Presupuesto y proceso recomendado</h4>
+        <p>Para un diseñador profesional con experiencia en branding tech: rango entre $1,200 y $3,500 USD por el paquete completo. Tiempo de entrega 4-6 semanas con 2-3 rondas de iteración. Buscar diseñadores en Dribbble con portafolio de identidades para startups SaaS o AI — no en marketplaces genéricos. Las plataformas recomendadas son Dribbble Hiring, Working Not Working, o referidos personales del ecosistema tech de Miami y Elevon AI.</p>
+      </div>
+
+      <div class="brief-item full">
+        <div class="brief-num">11</div>
+        <h4>Nota pastoral importante</h4>
+        <p>A pesar de la estética completamente tecnológica del logo, el proyecto mantiene identidad cristiana profunda en su operación, su currículo, y su discipulado. El logo es una herramienta de <strong>posicionamiento estratégico</strong> para acceder a recursos tech y socios profesionales — no es una declaración de identidad espiritual. La dimensión cristiana vive en los documentos internos, en la formación de los estudiantes, y en la vida del equipo. El único eco visual de esta dimensión es el nodo ámbar ligeramente descentrado, que introduce humanidad imperfecta dentro del sistema perfecto. Pastor Javier debe validar este enfoque antes del diseño final.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="container">
+    <p>REFUGIO DIGITAL · IDENTIDAD VISUAL v2.0 · ABRIL 2026</p>
+    <p>Punto de partida para versión profesional final</p>
+    <div class="soli">Soli Deo Gloria</div>
+  </div>
+</footer>
+
+</body>
+</html>
